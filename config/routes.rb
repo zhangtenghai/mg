@@ -1,10 +1,29 @@
 Rails.application.routes.draw do
+  resources :articles
+
+  resources :news
+
+  resources :games
+
+  resources :comments
+
+  devise_for :users
+  
+  namespace :admin do
+    resources :users do
+      collection do
+        get "change_password"
+        patch "update_password"
+      end
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  get "home/index"
+  root 'home#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  origin_name: MyString
+  developer: MyString
+  website: MyString
+  publisher: MyString
+  sale_price: 9.99
+  rating: MyString
+  avg_score: 9.99
+  sale_date: 2014-07-17 15:57:08
+
+two:
+  name: MyString
+  origin_name: MyString
+  developer: MyString
+  website: MyString
+  publisher: MyString
+  sale_price: 9.99
+  rating: MyString
+  avg_score: 9.99
+  sale_date: 2014-07-17 15:57:08

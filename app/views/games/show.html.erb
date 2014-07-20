@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @game.name %>
+</p>
+
+<p>
+  <strong>Origin name:</strong>
+  <%= @game.origin_name %>
+</p>
+
+<p>
+  <strong>Developer:</strong>
+  <%= @game.developer %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @game.website %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @game.publisher %>
+</p>
+
+<p>
+  <strong>Sale price:</strong>
+  <%= @game.sale_price %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @game.rating %>
+</p>
+
+<p>
+  <strong>Avg score:</strong>
+  <%= @game.avg_score %>
+</p>
+
+<p>
+  <strong>Sale date:</strong>
+  <%= @game.sale_date %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

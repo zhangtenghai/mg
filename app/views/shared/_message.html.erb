@@ -1,0 +1,30 @@
+<% unless flash[:alert].nil? %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="alert alert-danger">
+      <strong>提醒</strong>
+      <ul>
+        <li><%= flash[:alert] %></li>
+      </ul>
+    </div>
+    <% end %>
+
+    <% unless flash[:notice].nil? %>
+    <div class="alert alert-success">
+      <strong>提醒</strong>
+      <ul>
+        <li><%= flash[:notice] %></li>
+      </ul>
+    </div>
+    <% end %>
+
+    <% unless flash[:error].nil? %>
+    <div class="alert alert-danger">
+      <strong>错误</strong>
+      <ul>
+        <li><%= flash[:error] %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<% end %>

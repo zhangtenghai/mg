@@ -1,0 +1,1 @@
+OPTIONS = YAML.load_file("#{Rails.root}/config/options_config.yml")

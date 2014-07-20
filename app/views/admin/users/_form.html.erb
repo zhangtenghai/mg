@@ -1,0 +1,28 @@
+<%= form_for([:admin, @user], :html => { :class => "form-horizontal" }) do |f| %>
+  <div class="form-body">
+    <%= f.error_messages %>
+    <h4 class="form-section">基本信息</h4>
+    <div class="form-group">
+      <%= render "shared/column", name: "账号", content: f.c_text_field(:name) %>
+      <%= render "shared/column", name: "邮箱", content: f.email_field(:email, :autofocus => true, :class => 'form-control') %>
+      <%= render "shared/column", :name => "角色", :content => f.select(:role, OPTIONS["system_roles"], {}, :class => 'form-control select2me') %>
+    </div>
+    <div class="form-group">
+      <%= render "shared/column", name: "密码", content: f.password_field(:password, class: 'form-control') %>
+      <%= render "shared/column", name: "确认密码", content: f.password_field(:password_confirmation, class: 'form-control') %>
+      <label class="control-label col-md-1">禁用账户</label>
+      <div class="col-md-1">
+        <div class="checkbox-list">
+          <label class="checkbox-inline">
+            <%= check_box_tag(:locked, "1", @user.access_locked?, :class => "form-control" ) %>
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="form-actions right">
+    <button type="submit" class="btn">保存</button>
+  </div>
+<% end %>
+     

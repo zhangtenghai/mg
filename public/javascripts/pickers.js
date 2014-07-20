@@ -5,7 +5,7 @@ var Pickers = function () {
     if (jQuery().datepicker) {
       $('.date-picker').datepicker({
         rtl: Metronic.isRTL(),
-        orientation: "left",
+        orientation: "right",
         autoclose: true
       });
       //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
@@ -132,6 +132,7 @@ var Pickers = function () {
     $(".form_datetime").datetimepicker({
       autoclose: true,
       isRTL: Metronic.isRTL(),
+      todayBtn: true,
       pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left")
     });
 

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @article.user_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @article.category_id %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+
+<p>
+  <strong>Posted at:</strong>
+  <%= @article.posted_at %>
+</p>
+
+<p>
+  <strong>Quote:</strong>
+  <%= @article.quote %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @article.game_id %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

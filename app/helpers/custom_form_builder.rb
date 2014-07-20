@@ -30,7 +30,7 @@ class CustomFormBuilder < ActionView::Helpers::FormBuilder
     options = args.extract_options!
     new_class = options[:class] || "form-control"
     new_value =  object.send(label).strftime('%Y-%m-%d %H:%M:%S') if object.send(label)
-    @template.content_tag(:div, class: "input-group date form_datetime", data: { "date-language" => "zh-CN", "date-format" => "yyyy-mm-dd hh:ii:ss", "minute-step" => "1" }) do
+    @template.content_tag(:div, class: "input-group date form_datetime", data: { "date-language" => "zh-CN", "date-format" => "yyyy-mm-dd hh:ii:ss" }) do
       @template.text_field(object_name, label, *(args << options.merge(class: new_class, :value => new_value))) +
       @template.content_tag(:span, class: "input-group-btn") do
         @template.button_tag(class: "btn default date-reset", type: "button") do

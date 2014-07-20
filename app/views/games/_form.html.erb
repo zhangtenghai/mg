@@ -1,0 +1,25 @@
+<%= form_for(@game, :html => { :class => "form-horizontal" }) do |f| %>
+  <div class="form-body">
+    <%= f.error_messages %>
+    <h4 class="form-section">基本信息</h4>
+    <div class="form-group">
+      <%= render "shared/column", name: "名称", content: f.c_text_field(:name) %>
+      <%= render "shared/column", name: "原名", content: f.c_text_field(:origin_name) %>
+      <%= render "shared/column", name: "发售日", content: f.c_datetime_field(:sale_date) %>
+    </div>
+    <div class="form-group">
+      <%= render "shared/column", name: "开发商", content: f.c_text_field(:developer) %>
+      <%= render "shared/column", name: "发行商", content: f.c_text_field(:publisher) %>
+      <%= render "shared/column", name: "官网", content: f.c_text_field(:website) %>
+    </div>
+    <div class="form-group">
+      <%= render "shared/column", name: "评级", content: f.c_text_field(:rating) %>
+      <%= render "shared/column", name: "售价", content: f.c_text_field(:sale_price) %>
+    </div>
+  </div>
+
+  <div class="form-actions right">
+    <button type="submit" class="btn">保存</button>
+  </div>
+<% end %>
+
