@@ -42,6 +42,6 @@ class Admin::NewsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
-      params.require(:news).permit(:title, :user_id, :content, :posted_at, :game_id)
+      params.require(:news).permit(:title, :user_id,:head_img,:is_head, :content, :posted_at, :game_id)
     end
 end

@@ -35,17 +35,17 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_by_resource
-    if controller_path.split('/').first == "admin"
-      if devise_controller?
+    if devise_controller?
         'devise'
-      else
+    else
+      if controller_path.split('/').first == "admin"
         case action_name 
         when 'index' then 'list'
         when 'show', 'new', 'edit', 'update', 'create' then 'form'
         else 'application' end if controller_name != 'home'
+      else
+        "front"
       end
-    else
-      "front"
     end
   end
 

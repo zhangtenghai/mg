@@ -28,18 +28,20 @@
                 <th>发表时间</th>
                 <th>引用</th>
                 <th>属于游戏</th>
+                <th>主题</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               <% @articles.each do |f| %>
-                <tr>
+                <tr class="<%=!f.topic.blank? ? 'success' : '' %>">
                   <%= omission_td(10, f.title) %>
                   <td><%= f.user.name if f.user %></td>
-                  <td><%= f.category.name %></td>
+                  <td><%= f.category %></td>
                   <td><%= f.posted_at.strftime('%y-%m-%d %H:%M:%S') %></td>
                   <%= omission_td(10, f.quote) %>
                   <td><%= f.game.name if f.game %></td>
+                  <td><%= f.topic %></td>
                   <td>
                     <%= link_to '编辑', edit_admin_article_path(f) %>
                     <%= link_to '删除', admin_article_path(f), method: :delete, data: { confirm: '确定删除?' } %>

@@ -1,4 +1,11 @@
 zh-CN:
+  years: '年'
+  minutes: '分钟'
+  weeks: '周'
+  days: '天'
+  hours: '小时'
+  seconds: '秒'
+  months: '月'
   date:
     abbr_day_names:
     - 日

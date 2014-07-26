@@ -7,7 +7,3 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 u = User.new(:email => "admin@mg.com", :password => '12345678', :password_confirmation => '12345678',:name=>"admin",:role =>"管理员")
 u.save
-
-Category.find_or_create_by(:name => "前瞻")
-Category.find_or_create_by(:name => "评测")
-Category.find_or_create_by(:name => "业界评论")

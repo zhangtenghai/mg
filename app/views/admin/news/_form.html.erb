@@ -7,7 +7,18 @@
       <% if current_user.is_admin %>
       <%= render "shared/column", name: "作者", content: f.collection_select(:user_id,User.editors,:id,:name,{:include_blank => true,:selected => current_user.id}, {:class => 'form-control select2me'}) %>
       <% end %>
+     <label class="control-label col-md-1">是否头条</label>
+      <div class="col-md-3">
+        <div class="checkbox-list">
+          <label class="checkbox-inline">
+            <%= f.check_box(:is_head, :class => "form-control" ) %>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
       <%= render "shared/column", name: "游戏", content: f.collection_select(:game_id,Game.all,:id,:name,{:include_blank => true}, {:class => 'form-control select2me'}) %>
+      <%= render "shared/column", name: "背景图", content: f.file_field(:head_img) %>
     </div>
     <div class="form-group">
       <label class="control-label col-md-1">内容</label>

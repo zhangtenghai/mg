@@ -2,21 +2,33 @@ class Article < ActiveRecord::Base
   include Disable
   include Searchable
 
-  belongs_to :category
   belongs_to :user
   belongs_to :game
+  has_many :comments
   has_and_belongs_to_many :users_favorites, :class_name => "User", :join_table => "articles_user_favorites"
   validates_presence_of :title
 
   quick_search :title, :quote
+  # scope :previews, -> {where()}
+  # scope :evaluations,-> {where()}
+  # scope :voices, -> {where()}
+  scope :topics, -> {where("topic is not null")}
+  default_scope { enabled.order('id desc') }
+  has_attached_file :head_img, :styles => { :medium => "1600x873>", :thumb => "990x403>" }
+  validates_attachment_content_type :head_img, :content_type => /\Aimage\/.*\Z/
 
-  paginates_per 10
   before_create :init
+  paginates_per 10
+  
 
   def init
     if self.user.nil?
       self.user = User.current_user
     end
     self.posted_at = Time.now
+  end
+
+  def self.get_topic_article(topic)
+    Article.where(topic:topic).exists? ? Article.where(topic:topic).first : Article.last
   end
 end

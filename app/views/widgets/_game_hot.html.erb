@@ -3,12 +3,12 @@
 </div>
 <div class="hotreview_game">
   <div class="game_pic_wrap">
-    <div class="game_pic"><a href="单个游戏页面.html"><img src="/front/img/hotview.jpg" alt="坦克世界" /></a></div>
+    <div class="game_pic"><a href="单个游戏页面.html"><img src="<%=game.avatar.url%>" alt="<%=game.name%>" /></a></div>
     <div class="game_score">5</div>
   </div>
   <div class="game_info">
-    <div class="game_name"><a href="单个游戏页面.html">坦克世界</a></div>
-    <div class="game_sdate">11月4日发售</div>
+    <div class="game_name"><a href="单个游戏页面.html"><%=game.name%></a></div>
+    <div class="game_sdate"><%=game.sale_date.strftime('%y年%m月%d日')+'发售' if game.sale_date%></div>
   </div>
   <!-- 评论-->
   <div class="game_comment">

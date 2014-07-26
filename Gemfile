@@ -10,7 +10,7 @@ gem 'kaminari', '~> 0.15.1'
 gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'paperclip'
-
+gem 'dotiw'
 
 
 # Use SCSS for stylesheets

@@ -22,8 +22,7 @@
     <div class="form-group">
       <%= render "shared/column", name: "图像", content: f.file_field(:avatar) %>
     </div>
-    <%= image_tag @user.avatar.url(:medium) %>
-<%= image_tag @user.avatar.url(:thumb) %>
+
   </div>
   <div class="form-actions right">
     <button type="submit" class="btn">保存</button>

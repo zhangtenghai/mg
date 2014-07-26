@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725064927) do
+ActiveRecord::Schema.define(version: 20140726153332) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.integer  "category_id"
-    t.string   "content"
+    t.text     "content"
     t.datetime "posted_at"
     t.string   "quote"
     t.integer  "game_id"
@@ -28,18 +27,14 @@ ActiveRecord::Schema.define(version: 20140725064927) do
     t.string   "head_img_content_type"
     t.integer  "head_img_file_size"
     t.datetime "head_img_updated_at"
-    t.boolean  "is_topic"
+    t.string   "category"
+    t.string   "topic"
+    t.string   "summary"
   end
 
   create_table "articles_user_favorites", force: true do |t|
     t.integer  "user_id"
     t.integer  "article_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "categories", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,6 +46,9 @@ ActiveRecord::Schema.define(version: 20140725064927) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "disabled_at"
+    t.integer  "news_id"
+    t.integer  "article_id"
+    t.integer  "game_id"
   end
 
   create_table "game_ratings", force: true do |t|
@@ -78,13 +76,16 @@ ActiveRecord::Schema.define(version: 20140725064927) do
     t.string   "head_img_content_type"
     t.integer  "head_img_file_size"
     t.datetime "head_img_updated_at"
-    t.boolean  "is_topic"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "news", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.string   "content"
+    t.text     "content"
     t.datetime "posted_at"
     t.integer  "game_id"
     t.datetime "created_at"
@@ -94,7 +95,7 @@ ActiveRecord::Schema.define(version: 20140725064927) do
     t.string   "head_img_content_type"
     t.integer  "head_img_file_size"
     t.datetime "head_img_updated_at"
-    t.boolean  "is_topic"
+    t.boolean  "is_head"
   end
 
   create_table "taggings", force: true do |t|
