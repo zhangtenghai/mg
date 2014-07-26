@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
     params[resource] &&= (send(method_each_action) if respond_to?(method_each_action, true)) || (send(method_all_in_one) if respond_to?(method_all_in_one, true))
   end
 
+  def after_sign_in_path_for(resource)
+    if resource.role!="普通用户"
+      admin_home_index_path
+    else
+      root_path
+    end
+    
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => false
   end
@@ -26,13 +35,17 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_by_resource
-    if devise_controller?
-      'devise'
+    if controller_path.split('/').first == "admin"
+      if devise_controller?
+        'devise'
+      else
+        case action_name 
+        when 'index' then 'list'
+        when 'show', 'new', 'edit', 'update', 'create' then 'form'
+        else 'application' end if controller_name != 'home'
+      end
     else
-      case action_name 
-      when 'index' then 'list'
-      when 'show', 'new', 'edit', 'update', 'create' then 'form'
-      else 'application' end if controller_name != 'home'
+      "front"
     end
   end
 

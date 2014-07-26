@@ -27,6 +27,5 @@ module Mg
     config.i18n.default_locale = 'zh-CN'
     config.i18n.enforce_available_locales = false
     config.middleware.use Rack::ContentLength
-
   end
 end

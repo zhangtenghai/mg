@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><%= @title.nil? ? "" : @title + "--" %>Mrgamer</title>
+<link type="image/x-icon" href="/front/images/favicon.png" rel="icon" />
+<link type="image/x-icon" href="/front/images/favicon.png" rel="shortcut icon" />
+<link href="/front/css/rgs.css" type="text/css" rel="stylesheet" />
+<link href="/front/css/style.css" type="text/css" rel="stylesheet" />
+<link href="/front/css/responsive.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/front/js/jquery.js"></script>
+</head>
+<body>
+<!--header-outer-->
+<div id="header-outer" data-header-resize="1">
+  <%= render "shared_front/header" %>
+</div>
+<!--//header-outer--> 
+<!--content-->
+<%= yield %>
+<!--//content--> 
+<!--footer-->
+<div id="footer-outer">
+  <%= render "shared_front/footer" %>
+</div>
+<!--//footer--> 
+<a id="to-top"><i class="icon-angle-up"></i></a>
+
+<script type="text/javascript" src="/front/js/easing.js"></script>
+<script type="text/javascript" src="/front/js/source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="front/js/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<script type="text/javascript" src="front/js/init.js"></script>
+</body>
+</html>

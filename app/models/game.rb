@@ -2,6 +2,8 @@ class Game < ActiveRecord::Base
   include Disable
   include Searchable
 
+  acts_as_ordered_taggable
+  
   quick_search :name, :origin_name, :developer, :publisher, :website
   has_many :game_rating
   has_many :news

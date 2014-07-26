@@ -7,9 +7,9 @@ gem 'devise'
 gem 'cancan', '1.6.9'
 gem 'unicorn', '~> 4.8.2'
 gem 'kaminari', '~> 0.15.1'
-
-
-
+gem 'acts-as-taggable-on'
+gem 'carrierwave'
+gem 'paperclip'
 
 
 

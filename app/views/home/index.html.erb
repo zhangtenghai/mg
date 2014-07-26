@@ -1,19 +1,232 @@
-<% content_for :page_title do %>
-<h3 class="page-title">
-控制台 <small>MGamer</small>
-</h3>
-<ul class="page-breadcrumb breadcrumb">
-  <li>
-    <i class="fa fa-home"></i>
-    <a href="/">
-      控制台
-    </a>
-    <i class="fa fa-angle-right"></i>
-  </li>
-  <li>
-    <a href="#">
-      系统概要
-    </a>
-  </li>
-</ul>
-<% end %>
+<!--content-->
+<div class="container-wrap" style="background:no-repeat url(/front/images/bg/home-bg.jpg) 50% 0">
+  <div class="container" style="height:648px">
+    <div class="carousel_text">
+      <h2><a href="#">俗话说，十年磨一剑，而宝刀未老</a></h2>
+      <p>其实，任何一个使命召唤系列的老粉丝都不会觉得这款游戏在游戏性方面需要更多的尝试，那些嘲笑COD变成年货作品的游戏们也都最终变成了年货，而COD却一直保持着活力。</p>
+    </div>
+    <div class="score">
+      <div class="mg-score">8</div>
+      <div class="avg-score">8.5</div>
+    </div>
+  </div>
+</div>
+<div class="container-wrap" style="background:no-repeat url(/front/images/bg/home-bg-shadow.png) 50% 0">
+  <div class="container main-content">
+    <div class="row"> 
+      <!-- 右边栏-->
+      <div class="main_aside">
+        <div class="aside_box">
+          <%=render "widgets/advertise" %>
+        </div>
+        <div class="aside_box white_bg">
+          <%=render "widgets/game_sale" %>
+        </div>
+        <div class="aside_box black_bg">
+          <%=render "widgets/game_hot" %>
+        </div>
+        <div class="aside_box white_bg">
+          <%=render "widgets/voice" %>
+        </div>
+      </div>
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container clearfix">
+        <div class="container_banner">
+          <div class="container_block m_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>头条新闻</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+                <div class="news_title"><a href="#">镜之边缘最新视频<br />
+                  也许无缘本世代主机</a></div>
+                <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><a href="#"><img src="img/t1.jpg" alt="" /></a></div>
+              </div>
+              <div class="hotnews_text">
+                <p>EA副总裁Patrick Soderlund今日公开确认了Mirror's Edge将会略过旧世代主机，直接登录PC和PS4/Xbox One平台。镜之边缘的续作这麽多年以来一直都默默无闻，甚至中间传出过多次传言将会被腰斩，每每谈及此处都是闻者伤心见者落泪，未曾想到如今这个作品哇噻又被……</p>
+                <div class="writer"><span class="date">发布于1小时前</span><a href="个人页.html">文/基王</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>新闻</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+                <div class="news_title"><a href="#">上古卷轴ol<br />
+                  将会采用月费制收费</a></div>
+                <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><a href="#"><img src="img/t2.jpg" alt="" /></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>新闻</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+                <div class="news_title"><a href="#">GamesCom 2013<br />
+                  FIFA 14强势领衔！</a></div>
+                <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><a href="#"><img src="img/t3.jpg" alt="" /></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>新闻</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+                <div class="news_title"><a href="#">战地4俄军Z-11W演示<br />
+                  潜水船艇进击战斗</a></div>
+                <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><a href="#"><img src="img/t4.jpg" alt="" /></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>新闻</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+                <div class="news_title"><a href="#">使命召唤幽灵灭绝模式<br />
+                  实战视频，人类难逃厄运</a></div>
+                <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><a href="#"><img src="img/t5.jpg" alt="" /></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container_block b_block">
+          <div class="container_blockin">
+            <div class="container_wrap">
+              <div class="common_title">
+                <h4>前瞻</h4>
+              </div>
+              <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+              <div class="news_detail">
+                <h3><a href="#">欢迎来到上海</a></h3>
+                <div class="ralative_tags"> <span><a href="#">战地4</a></span> <span>10月11日发售</span> <span><a href="#">by基王</a></span> </div>
+                <div class="detail_text">EA今年轰轰烈烈的打出了战地4的大牌。从一开始的几秒钟坑爹预告片，再到XBOX ONE发布会的实机演示，然后是到了E3展上的多人演示以及Alpha测试。再从TV广告到了街头的巨幅海报。似乎前几年战地3的钱没有捞够，战地4还要再捞一笔</div>
+              </div>
+              <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
+              <div class="container_pic"><a href="#"><img src="/front/img/t6.jpg" alt="" /></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="container_block b_block">
+          <div class="container_blockin">
+            <div class="container_wrap">
+              <div class="common_title">
+                <h4>评测</h4>
+              </div>
+              <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+              <div class="news_detail">
+                <h3><a href="#">经典的延续者</a></h3>
+                <div class="ralative_tags"> <span><a href="#">DotA2</a></span> <span>10月11日发售</span> <span><a href="#">by小祝</a></span> </div>
+                <div class="detail_text">冰蛙的微博上出现了这样的一条消息："DOTA2将于西雅图之前公测"而完美官方表示，中国服将比国外服更早的进入运营状态，也就是说国服很有可能在7月中旬左右就可以正式上市。</div>
+              </div>
+              <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
+              <div class="container_pic"><a href="#"><img src="/front/img/t7.jpg" alt="" /></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="container_block b_block">
+          <div class="container_blockin">
+            <div class="container_wrap">
+              <div class="common_title">
+                <h4>业界评论</h4>
+              </div>
+              <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+              <div class="news_detail">
+                <h3><a href="#">请暂缓 "电子竞技"盲目前进的脚步</a></h3>
+                <div class="ralative_tags"> <span>电子竞技</span> <span><a href="#">by酋长</a></span> </div>
+                <div class="detail_text">当中国的电竞产业已经到了严重矛盾的头重脚轻的地步的时候，我觉得，是时候该让电子竞技这个无限风光的"中国梦"停止盲目前进的脚步，认真反思自己并作出真正的改观的时候了。</div>
+              </div>
+              <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
+              <div class="container_pic"><a href="#"><img src="/front/img/t8.jpg" alt="" /></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="load_tip"><a href="javascript:;">给爷往下加载！</a></div>
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>
+
+<div id="mr-regbox" style="display:none;" class="popbox">
+  <div class="common_title clearfix"> <a href="#" class="aside_more">已有账号？登录<span>&gt;</span></a>
+            <h4>新用户注册</h4>
+            <div class="reg_tab">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <th scope="row">昵称</th>
+                    <td><input type="text" class="reg_input" /></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">密码</th>
+                    <td><input type="password" class="reg_input" /></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">邮箱</th>
+                    <td><input type="text" class="reg_input" /></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><a href="#" class="btn-reg">注册</a><div class="reg_tips">注册用户可以收藏新闻、文章以及游戏。发表评论、给游戏评分并且可以参与一系列网站活动。</div></td>
+                  </tr>
+                   <tr>
+                    <td colspan="2"><div class="disline"><span class="disline_f">or</span></div></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><div class="other_login"><a href="#" class="weibo_style"></a><a href="#" class="qq_style"></a></div></td>
+                  </tr>
+                </table>
+
+            </div>
+          </div>
+</div>
+<div id="mr-loginbox" style="display:none;" class="popbox">
+  <div class="common_title clearfix"> <a href="#" class="aside_more">没有帐号？注册<span>&gt;</span></a>
+            <h4>登录</h4>
+            <div class="reg_tab">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <th scope="row">昵称</th>
+                    <td><input type="text" class="reg_input" /></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">密码</th>
+                    <td><input type="password" class="reg_input" /></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">&nbsp;</th>
+                    <td><label><input type="checkbox" class="reg_check" checked="checked"/>记住密码 </label></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><a href="#" class="btn-reg">登录</a><div class="reg_tips">登录后可以收藏新闻、文章以及游戏。
+发表评论、给游戏评分并且可以参与一系列网站活动。</div></td>
+                  </tr>
+                   <tr>
+                    <td colspan="2"><div class="disline"><span class="disline_f">or</span></div></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><div class="other_login"><a href="#" class="weibo_style"></a><a href="#" class="qq_style"></a></div></td>
+                  </tr>
+                </table>
+
+            </div>
+          </div>
+</div>
