@@ -14,8 +14,11 @@ class Article < ActiveRecord::Base
   # scope :voices, -> {where()}
   scope :topics, -> {where("topic is not null")}
   default_scope { enabled.order('id desc') }
-  has_attached_file :head_img, :styles => { :medium => "1600x873>", :thumb => "990x403>" }
+  has_attached_file :head_img, :styles => {  :medium => "1600x873" }
   validates_attachment_content_type :head_img, :content_type => /\Aimage\/.*\Z/
+
+  has_attached_file :avatar, :styles => {  :medium => "990x403" }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   before_create :init
   paginates_per 10
