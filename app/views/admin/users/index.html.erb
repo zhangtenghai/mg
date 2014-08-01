@@ -25,6 +25,7 @@
                 <th>账号</th>
                 <th>邮箱</th>
                 <th>当前系统角色</th>
+                <th>图像</th>
                 <th>是否启用</th>
                 <th></th>
               </tr>
@@ -35,6 +36,7 @@
                   <td><%= item.name %></td>
                   <td><%= item.email %></td>
                   <td><%= item.role %></td>
+                  <th><%=image_hover('图像' ,item.avatar.url) %></th>
                   <td><%= item.access_locked? ? "已禁用" : "已启用" %></td>
                   <td>
                     <%= link_to '编辑', edit_admin_user_path(item) %>

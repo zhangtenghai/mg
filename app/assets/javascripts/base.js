@@ -41,5 +41,6 @@ jQuery(document).ready(function() {
     Metronic.runResizeHandlers();
     return e.preventDefault();
   });
+
 });
 
