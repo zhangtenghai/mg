@@ -22,73 +22,79 @@
         <div class="col span_5" style="float:right">
           <ul class="nav">
             <li>
-              <a href="#">游戏库</a>
-              <div class="nav-dropbox">
+              <a href="/games">游戏库</a>
+             <!--  <div class="nav-dropbox">
                     <ul>
                         <li><a href="#">New Games</a></li>
                         <li><a href="#">GameSpot Fifty</a></li>
                     </ul>
-                </div>
+                </div> -->
             </li>
             <li>
-              <a href="#">新闻</a>
-                <div class="nav-dropbox">
+              <a href="/news">新闻</a>
+               <!--  <div class="nav-dropbox">
                     <ul>
                         <li><a href="#">新闻</a></li>
                         <li><a href="#">新闻</a></li>
                     </ul>
-                </div>
+                </div> -->
             </li>
             <li>
-              <a href="#">前瞻</a>
-                <div class="nav-dropbox">
+              <a href="/previews">前瞻</a>
+                <!-- <div class="nav-dropbox">
                     <ul>
                         <li><a href="#">前瞻</a></li>
                         <li><a href="#">前瞻</a></li>
                     </ul>
-                </div>
+                </div> -->
             </li>
             <li>
               <a href="#">评测</a>
-                <div class="nav-dropbox">
+               <!--  <div class="nav-dropbox">
                     <ul>
                         <li><a href="#">评测</a></li>
                         <li><a href="#">评测</a></li>
                     </ul>
-                </div>
+                </div> -->
             </li>
             <li>
               <a href="#">业界评论</a>
-                <div class="nav-dropbox">
+               <!--  <div class="nav-dropbox">
                     <ul>
                         <li><a href="#">业界评论</a></li>
                         <li><a href="#">业界评论</a></li>
                     </ul>
-                </div>
+                </div> -->
             </li>
           </ul>
-          <div class="user-login clearfix">
+          <% if current_user.nil? %>
+          <div class="user-login clearfix" style="display:block">
             <a href="#mr-loginbox" class="btn-login fancybox">登录</a>
             <a href="#mr-regbox" class="btn-reg fancybox">注册</a>
           </div>
-          <div class="user-info">
-            <div class="user-name">基王</div>
-            <div class="user-img"><img src="/front/img/user_head.jpg" alt="" /></div>
-            <div class="user-tipnum">3</div>
+          <% else %>
+          <div class="user-info" style="display:block">
+            <div class="user-name"><%=current_user.pet_name%></div>
+            <div class="user-img"><img src="<%=current_user.avatar.url(:medium)%>" alt="" /></div>
+            <!-- <div class="user-tipnum">3</div> -->
             <div class="user-dropbox">
               <div class="arr"></div>
                 <div class="arr_in"></div>
               <ul>
-                  <li><a href="#" class="private-page">个人主页</a></li>
+                  <li><a href="/users/profile?user_name=<%=current_user.pet_name%>" class="private-page">个人主页</a></li>
                     <li><a href="#" class="edit-profile">修改资料</a></li>
-                    <li class="act"><a href="#" class="new-message">新消息（3条）</a></li>
-                    <li><a href="#" class="login-out">注销</a></li>
+                    <!-- <li class="act"><a href="#" class="new-message">新消息（3条）</a></li> -->
+                    <li><%= link_to destroy_user_session_path, { method: "delete",:class=>'login-out'} do %>注销<%end%></li>
+
                 </ul>
             </div>
           </div>
+          <% end %>
         </div>
       </div>
     </div>
   </header>
+<% if current_user.nil? %>
 <%=render "shared_front/login" %>
 <%=render "shared_front/register" %>
+<% end %>

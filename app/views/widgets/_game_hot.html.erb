@@ -7,27 +7,20 @@
     <div class="game_score">5</div>
   </div>
   <div class="game_info">
-    <div class="game_name"><a href="单个游戏页面.html"><%=game.name%></a></div>
+    <div class="game_name"><a href="/games/<%=game.id%>"><%=game.name%></a></div>
     <div class="game_sdate"><%=game.sale_date.strftime('%y年%m月%d日')+'发售' if game.sale_date%></div>
   </div>
+
   <!-- 评论-->
   <div class="game_comment">
-    <div class="comment_block">
-      <div class="user_head"><a href="#"><img src="/front/img/user_head.jpg" alt="基王" /></a></div>
-      <div class="comment_text">这款游戏在游戏性上下了苦工，平衡性方面也很不错，无奈收费<span class="ellipsis">……</span><span class="hid">省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的。</span><a href="javascript:;" class="view-all">[全部]</a><a href="#" class="user-name">by基王</a></div>
-    </div>
-    <div class="comment_block">
-      <div class="user_head"><a href="#"><img src="/front/img/user_head.jpg" alt="基王" /></a></div>
-      <div class="comment_text">虽然我已经沉迷了但是我还是打了五分不服气的话来咬我啊<a href="#" class="user-name">by基王</a></div>
-    </div>
-    <div class="comment_block">
-      <div class="user_head"><a href="#"><img src="/front/img/user_head.jpg" alt="基王" /></a></div>
-      <div class="comment_text">那么总所周知呢，基王是一个很有节操的人，既然我这么有节操<span class="ellipsis">……</span><span class="hid">省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的。</span><a href="javascript:;" class="view-all">[全部]</a><a href="#" class="user-name">by基王</a></div>
-    </div>
-    <div class="comment_block">
-      <div class="user_head"><a href="#"><img src="/front/img/user_head.jpg" alt="基王" /></a></div>
-      <div class="comment_text">大家好我是雪人，楼上那些家伙都在乱说话，这款游戏我最有发言权了，因为我根本就没有玩过，有些时候我会想，我到底能不能为一个我没有玩过的游戏发表评论，后来我发现这种想法非常的错误，因为我爱说什<span class="ellipsis">……</span><span class="hid">省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的省略号代表的。</span><a href="javascript:;" class="view-all">[全部]</a><a href="#" class="user-name">by基王</a></div>
-    </div>
+    <% game.comments.each do |f|%>
+      <div class="comment_block">
+      <div class="user_head"><a href="#"><img src="<%=f.user.avatar.url(:thumb)%>" alt="<%=f.user.pet_name%>" /></a></div>
+      <div class="comment_text"><%=f.content %><a href="#" class="user-name">by <%=f.user.pet_name%></a></div>
+      </div>
+    <% end %>
+    
+   
   </div>
   <!-- //评论--> 
 </div>

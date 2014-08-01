@@ -26,7 +26,7 @@
           <%=render "widgets/game_hot", game:@hot_game %>
         </div>
         <div class="aside_box white_bg">
-          <%=render "widgets/voice" %>
+          <%=render "widgets/voice",voices:@voices %>
         </div>
       </div>
       <!-- //右边栏--> 
@@ -46,7 +46,7 @@
               </div>
               <div class="hotnews_text">
                 <p><%=@head_news.content.length>300 ? @head_news.content[0,300]+"..." :  @head_news.content%></p>
-                <div class="writer"><span class="date">发布于<%=time_words(@head_news.created_at)%>前</span><a href="#">文/<%=@head_news.user.name%></a></div>
+                <div class="writer"><span class="date">发布于<%=time_words(@head_news.created_at)%>前</span><a href="#">文/<%=@head_news.user.pet_name%></a></div>
               </div>
             </div>
           </div>
@@ -76,51 +76,21 @@
                 <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
                 <div class="news_detail">
                   <h3><a href="#"><%=f.title%></a></h3>
-                  <div class="ralative_tags"> <span><a href="#"><%=f.game.name if f.game%></a></span> <span><%=(f.game.sale_date.strftime('%y年%m月%d日')+"发售") if f.game && f.game.sale_date%></span> <span><a href="#">by <%=f.user.name if f.user%></a></span> </div>
+                  <div class="ralative_tags"> <span><a href="#"><%=f.game.name if f.game%></a></span> <span><%=(f.game.sale_date.strftime('%y年%m月%d日')+"发售") if f.game && f.game.sale_date%></span> <span><a href="#">by <%=f.user.pet_name if f.user%></a></span> </div>
                   <div class="detail_text"><%=f.summary%></div>
                 </div>
                 <div class="comment_num"><%=f.comments.length%></div><a href="/articles/<%=f.id%>" class="container_mask"></a>
-                <div class="container_pic"><a href="#"><img src="<%=f.head_img.url(:thumb)%>" alt="" /></a></div>
+                <div class="container_pic"><a href="#"><img src="<%=f.avatar.url(:medium)%>" alt="" /></a></div>
               </div>
             </div>
           </div>
         <% end %>
-        
-        <div class="container_block b_block">
-          <div class="container_blockin">
-            <div class="container_wrap">
-              <div class="common_title">
-                <h4>评测</h4>
-              </div>
-              <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
-              <div class="news_detail">
-                <h3><a href="#">经典的延续者</a></h3>
-                <div class="ralative_tags"> <span><a href="#">DotA2</a></span> <span>10月11日发售</span> <span><a href="#">by小祝</a></span> </div>
-                <div class="detail_text">冰蛙的微博上出现了这样的一条消息："DOTA2将于西雅图之前公测"而完美官方表示，中国服将比国外服更早的进入运营状态，也就是说国服很有可能在7月中旬左右就可以正式上市。</div>
-              </div>
-              <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
-              <div class="container_pic"><a href="#"><img src="/front/img/t7.jpg" alt="" /></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="container_block b_block">
-          <div class="container_blockin">
-            <div class="container_wrap">
-              <div class="common_title">
-                <h4>业界评论</h4>
-              </div>
-              <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
-              <div class="news_detail">
-                <h3><a href="#">请暂缓 "电子竞技"盲目前进的脚步</a></h3>
-                <div class="ralative_tags"> <span>电子竞技</span> <span><a href="#">by酋长</a></span> </div>
-                <div class="detail_text">当中国的电竞产业已经到了严重矛盾的头重脚轻的地步的时候，我觉得，是时候该让电子竞技这个无限风光的"中国梦"停止盲目前进的脚步，认真反思自己并作出真正的改观的时候了。</div>
-              </div>
-              <div class="comment_num">9</div><a href="http://www.mrgamer.com" class="container_mask"></a>
-              <div class="container_pic"><a href="#"><img src="/front/img/t8.jpg" alt="" /></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="load_tip"><a href="javascript:;">给爷往下加载！</a></div>
+        <%= paginate @articles, :theme => "front" %>
+        <!-- <div class="dispage">
+          <a href="#" class="prev">上一页</a>
+          <a href="#">1</a>...&nbsp;<a href="#">5</a><a href="#">6</a><a href="#">7</a>...&nbsp;<a href="#">11</a>
+          <a href="#" class="next">下一页</a></div>
+        <div class="load_tip"><a href="javascript:;">给爷往下加载！</a></div> -->
         <div class="clear"></div>
       </div>
       <!-- //左内容--> 

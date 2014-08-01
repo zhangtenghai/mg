@@ -52,6 +52,18 @@
     </ul>
   </li>
   <% end %>
+  <% if can? :edit, :voice_menu %>
+  <li class="classic-menu-dropdown">
+    <a data-toggle="dropdown" data-hover="dropdown" data-close-others="true" href="">
+      业界声音<i class="fa fa-angle-down"></i>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to "业界声音", admin_voices_path, { id: "menu_voice" } %>
+      </li>
+    </ul>
+  </li>
+  <% end %>
 
 
 <% content_for :page_scripts do %>

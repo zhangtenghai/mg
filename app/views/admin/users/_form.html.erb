@@ -20,7 +20,8 @@
       </div>
     </div>
     <div class="form-group">
-      <%= render "shared/column", name: "图像", content: f.file_field(:avatar) %>
+      <%= render "shared/column", name: "昵称", content: f.c_text_field(:pet_name) %>
+      <%= render "shared/column", name: "头像(45x45)", content: f.file_field(:avatar) %>
     </div>
 
   </div>

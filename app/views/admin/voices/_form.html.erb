@@ -1,0 +1,22 @@
+<%= form_for([:admin, @voice], :html => { :class => "form-horizontal" }) do |f| %>
+  <div class="form-body">
+    <%= f.error_messages %>
+    <h4 class="form-section">基本信息</h4>
+    <div class="form-group">
+      <%= render "shared/column", name: "姓名", content: f.c_text_field(:user_name) %>
+      <%= render "shared/column", name: "职称", content: f.c_text_field(:user_title) %>
+      <%= render "shared/column", name: "头像(45x45)", content: f.file_field(:avatar) %>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-1">内容</label>
+      <div class="col-md-11">
+        <%= f.text_area(:content, :class => "form-control") %>
+      </div>
+    </div>
+
+  </div>
+  <div class="form-actions right">
+    <button type="submit" class="btn">保存</button>
+  </div>
+<% end %>
+     

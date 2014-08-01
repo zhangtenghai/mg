@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
       <%= render "shared/column", name: "游戏", content: f.collection_select(:game_id,Game.all,:id,:name,{:include_blank => true}, {:class => 'form-control select2me'}) %>
-      <%= render "shared/column", name: "背景图", content: f.file_field(:head_img) %>
+      <%= render "shared/column", name: "缩略图(312x200)", content: f.file_field(:head_img) %>
     </div>
     <div class="form-group">
       <label class="control-label col-md-1">内容</label>

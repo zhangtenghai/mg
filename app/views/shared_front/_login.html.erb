@@ -1,22 +1,25 @@
+
 <div id="mr-loginbox" style="display:none;" class="popbox">
   <div class="common_title clearfix"> <a href="#" class="aside_more">没有帐号？注册<span>&gt;</span></a>
     <h4>登录</h4>
     <div class="reg_tab">
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %> 
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
           <tr>
-            <th scope="row">昵称</th>
-            <td><input type="text" class="reg_input" /></td>
+            <th scope="row">账号</th>
+            <td><%= f.text_field :login, :class => "reg_input", :autocomplete =>"off", :tabindex => 1, :accesskey => 'u',:placeholder => '账号' %></td>
           </tr>
           <tr>
             <th scope="row">密码</th>
-            <td><input type="password" class="reg_input" /></td>
+            <td> <%= f.password_field :password, :class => "reg_input", :autocomplete =>"off", :tabindex => 1, :accesskey => 'u',:placeholder => '密码' %></td>
           </tr>
           <tr>
             <th scope="row">&nbsp;</th>
             <td><label><input type="checkbox" class="reg_check" checked="checked"/>记住密码 </label></td>
           </tr>
           <tr>
-            <td colspan="2"><a href="#" class="btn-reg">登录</a><div class="reg_tips">登录后可以收藏新闻、文章以及游戏。
+            <td colspan="2"><%=f.submit '登录',class:'btn-reg'%><div class="reg_tips">登录后可以收藏新闻、文章以及游戏。
 发表评论、给游戏评分并且可以参与一系列网站活动。</div></td>
           </tr>
            <tr>
@@ -26,7 +29,9 @@
             <td colspan="2"><div class="other_login"><a href="#" class="weibo_style"></a><a href="#" class="qq_style"></a></div></td>
           </tr>
         </table>
-
+      <% end %>
     </div>
   </div>
 </div>
+
+

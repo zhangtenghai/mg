@@ -9,9 +9,9 @@ class Article < ActiveRecord::Base
   validates_presence_of :title
 
   quick_search :title, :quote
-  # scope :previews, -> {where()}
-  # scope :evaluations,-> {where()}
-  # scope :voices, -> {where()}
+  scope :previews, -> {where(category: '前瞻')}
+  scope :evaluations,-> {where(category: '评测')}
+  scope :voices, -> {where(category: '业界评论')}
   scope :topics, -> {where("topic is not null")}
   default_scope { enabled.order('id desc') }
   has_attached_file :head_img, :styles => {  :medium => "1600x873" }
@@ -32,6 +32,6 @@ class Article < ActiveRecord::Base
   end
 
   def self.get_topic_article(topic)
-    Article.where(topic:topic).exists? ? Article.where(topic:topic).first : Article.last
+    Article.where(topic:topic).exists? ? Article.where(topic:topic).first : Article.first
   end
 end

@@ -9,6 +9,9 @@
 <link href="/front/css/style.css" type="text/css" rel="stylesheet" />
 <link href="/front/css/responsive.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="/front/js/jquery.js"></script>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+<%= csrf_meta_tags %>
 </head>
 <body>
 <!--header-outer-->
@@ -28,7 +31,7 @@
 
 <script type="text/javascript" src="/front/js/easing.js"></script>
 <script type="text/javascript" src="/front/js/source/jquery.fancybox.js?v=2.1.5"></script>
-<link rel="stylesheet" type="text/css" href="front/js/source/jquery.fancybox.css?v=2.1.5" media="screen" />
-<script type="text/javascript" src="front/js/init.js"></script>
+<link rel="stylesheet" type="text/css" href="/front/js/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<script type="text/javascript" src="/front/js/init.js"></script>
 </body>
 </html>

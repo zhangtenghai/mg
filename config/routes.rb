@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :news
     resources :games
     resources :comments
+    resources :voices
     resources :users do
       collection do
         get "change_password"
@@ -18,12 +19,18 @@ Rails.application.routes.draw do
     get "home/index"
   end
   
-  get "games/:id", :to => "games#show"
-  get "news/:id", :to => "news#show"
-  get "articles/:id", :to => "articles#show"
+  resources :games, only: [:index,:show]
+  resources :news, only: [:index,:show]
+  resources :articles, only: [:index,:show]
+  get "previews" => 'previews#index'
+  get "evaluations" => 'evaluations#index'
+  get "comments" => 'comments#index'
+  
 
-  get "home/index"
   root 'home#index'
+  get "home/index"
+  get "admin" => "admin/home#index"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

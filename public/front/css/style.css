@@ -672,3 +672,14 @@ label span { color: #27CFC3; }
 .popbox .reg_tab .other_login a.weibo_style:hover{background-position:1px -30px;}
 .popbox .reg_tab .other_login a.qq_style{background-position:100% 0;}
 .popbox .reg_tab .other_login a.qq_style:hover{background-position:-209px -30px;}
+
+div.dispage { padding: 3px; margin: 3px; text-align: center }
+div.dispage li { display: inline; }
+div.dispage li.active { position:relative; top:1px }
+div.dispage li.active a { border: #e6e6e6 1px solid; width: 38px; height: 38px; margin: 2px; color: #f66; font: bold 20px/38px Arial; display: inline-block; cursor: default; }
+div.dispage a { border: #e6e6e6 1px solid; width: 38px; height: 38px; margin: 2px; color: #666; font: 16px/38px Arial; display: inline-block; }
+div.dispage a.prev, div.dispage a.next { width: 68px }
+div.dispage a:hover { border: #ff8585 1px solid; color: #ff8585; text-decoration: none }
+div.dispage a:active { border: #e6e6e6 1px solid; color: #666; }
+div.dispage span.current { border: #e6e6e6 1px solid; width: 38px; height: 38px; margin: 2px; font: bold 18px/38px Arial; display: inline-block; cursor: default; }
+div.dispage span.disabled { border: #eee 1px solid; padding: 2px 5px; margin: 2px; color: #ddd; padding-top: 2px; }

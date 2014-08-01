@@ -15,14 +15,14 @@
     <div class="form-group">
       <%= render "shared/column", name: "评级", content: f.c_text_field(:rating) %>
       <%= render "shared/column", name: "售价", content: f.c_text_field(:sale_price) %>
-      <%= render "shared/column", name: "头像", content: f.file_field(:avatar) %>
+      <%= render "shared/column", name: "头像(160x160)", content: f.file_field(:avatar) %>
     </div>
     <div class="form-group">
       <label class="control-label col-md-1">标签</label>
       <div class="col-md-7">
         <%=f.c_text_field(:tag_list) %>
       </div>
-      <%= render "shared/column", name: "背景图", content: f.file_field(:head_img) %>
+      <%= render "shared/column", name: "背景图(1600x873)", content: f.file_field(:head_img) %>
     </div>
   </div>
 

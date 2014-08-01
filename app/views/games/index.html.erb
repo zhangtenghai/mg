@@ -1,0 +1,216 @@
+<div class="container-wrap" style="background:no-repeat url(<%=@topic.head_img.url(:medium)%>) 50% 0">
+  <div class="container" style="height:648px">
+    <div class="carousel_text">
+      <h2><a href="#"><%=@topic.game.name %></a></h2>
+      <div class="carousel_tags"><span class="game_tips"><%=@topic.game.sale_date.strftime('%Y年%m月%d日')+'上市' if @topic.game && @topic.game.sale_date%></span><span class="sns_btn clearfix"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </span></div>
+    </div>
+  </div>
+</div>
+<div class="container-wrap">
+  <div class="container main-content">
+    <div class="row"> 
+      <!-- 右边栏-->
+      <div class="main_aside">
+        <div class="aside_box white_bg">
+          <div class="aside_fav"> <span class="date">2014年3月</span> <span class="subject">最<a href="#">热门</a>游戏</span> <span class="tips">登录来为您喜爱的游戏投票</span> </div>
+        </div>
+        <div class="aside_box black_bgs">
+          <div class="aside_fav"> <span class="date">2014年3月</span> <span class="subject">最<a href="#">受期待</a>游戏</span> <span class="tips">登录来为您喜爱的游戏投票</span> </div>
+        </div>
+        <div class="aside_box white_search">
+          <div class="common_title clearfix">
+            <h4>搜索游戏</h4>
+          </div>
+          <div class="search_wrap">
+                <div id="search-outer">
+                <div id="search">
+                  <div id="search-box">
+                    <form action="http://www.mrgamer.com" method="GET">
+                      <input type="text" name="s" id="s" value="" placeholder="请输入想要搜索的内容" class="ui-autocomplete-input" autocomplete="off">
+                      <span role="status" aria-live="polite" class="ui-helper-hidden-accessible">No search results.</span>
+                    </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="game_search">
+              <div class="search_block clearfix">
+                <div class="search_title">搜索条件</div>
+              </div>
+              <div class="search_block clearfix">
+                <div class="search_type">平台</div>
+                <div class="search_option"><select><option selected>所有平台</option><option>其它</option></select></div>
+              </div>
+              <div class="search_block clearfix">
+                <div class="search_type">主题</div>
+                <div class="search_option"><select><option selected>所有主题</option><option>其它</option></select></div>
+              </div>
+              <div class="search_block clearfix">
+                <div class="search_type">最低分</div>
+                <div class="search_option"><select><option selected>无下限</option><option>其它</option></select></div>
+              </div>
+              <div class="search_block clearfix">
+                <div class="search_type">语言</div>
+                <div class="search_option"><select><option selected>所有语言</option><option>其它</option></select></div>
+              </div>
+              <div class="search_block clearfix">
+                <div class="search_type">发售日期</div>
+                <div class="search_option"><select><option selected>起始日期</option><option>其它</option></select></div>
+                 <div class="search_option"><select><option selected>结束日期</option><option>其它</option></select></div>
+              </div>
+            </div>
+        </div>
+        <div class="aside_box"><a href="http://www.baidu.com"><img src="img/adimg.jpg" alt="战地三 同名小说" class="adimg" /></a></div>
+      </div>
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container clearfix">
+        <div class="container_banner">
+          <div class="container_block s_block">
+              <div class="container_blockin">
+                <div class="container_wrap">
+                  <div class="common_title">
+                    <h4>新闻</h4>
+                  </div>
+                  <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> 
+                  </div>
+                  <div class="news_title"><a href="#">dwadawdwa</a></div>
+                  <a href="http://www.mrgamer.com" class="container_mask"></a>
+                  <div class="container_pic"><img src="img/t2.jpg" alt="" /></div>
+                </div>
+              </div>
+            </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>TOP1</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a></div>
+                <div class="news_title">镜之边缘：起源</div>
+                <a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><img src="img/t2.jpg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>TOP1</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a></div>
+                <div class="news_title">镜之边缘：起源</div>
+                <a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><img src="img/t3.jpg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>TOP1</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a></div>
+                <div class="news_title">镜之边缘：起源</div>
+                <a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><img src="img/t4.jpg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>TOP1</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a></div>
+                <div class="news_title">镜之边缘：起源</div>
+                <a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><img src="img/t5.jpg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="container_block s_block">
+            <div class="container_blockin">
+              <div class="container_wrap">
+                <div class="common_title">
+                  <h4>TOP1</h4>
+                </div>
+                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a></div>
+                <div class="news_title">镜之边缘：起源</div>
+                <a href="http://www.mrgamer.com" class="container_mask"></a>
+                <div class="container_pic"><img src="img/t1.jpg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container_banner">
+          <div class="container_date" style="padding-bottom:0;">
+            <div class="container_date_all"> <span class="title">本周游戏发售表</span> <span class="date-area"> 2014.1.27~2014.2.1</span> </div>
+          </div>
+        </div>
+        <div class="container_banner">
+          <div class="container_date">
+            <div class="container_date_in"> <span class="week">周日</span> <span class="month-day">2.1</span> </div>
+          </div>
+          <div class="gamesales_list">
+            <div class="gamesales_block clearfix">
+              <div class="gamesales_author"><a href="#"><img src="img/user_head.jpg" alt=""></a></div>
+              <div class="gamesales_text">
+                <div class="game_name"><a href="#">护身符：序章（收藏版）</a></div>
+                <ul class="game_system">
+                  <li class="style1">PS3</li>
+                  <li class="style2">X360</li>
+                  <li class="style3">PC</li>
+                  <li class="style4">WiiU</li>
+                </ul>
+                <div class="game_detail">这是一款经典桌游的数字重制版，如果一定我评价的话就是高端大气上档次，低调冷艳有内涵。来自一个名为"游戏工作室"的游戏工作室。</div>
+              </div>
+            </div>
+            <div class="gamesales_block clearfix">
+              <div class="gamesales_author"><a href="#"><img src="img/user_head.jpg" alt=""></a></div>
+              <div class="gamesales_text has_score">
+                <div class="score score-whitebg">
+                  <div class="mg-score">6</div>
+                  <div class="avg-score">4.75</div>
+                </div>
+                <div class="game_name"><a href="#">火影忍者疾风传 最强忍者风暴：大爆发</a></div>
+                <ul class="game_system">
+                  <li class="style5">PS4</li>
+                  <li class="style6">XBO</li>
+                  <li class="style7">VITA</li>
+                  <li class="style8">3DS</li>
+                </ul>
+                <div class="game_detail">有很多新的内容，很多新的配音，很多新的特效，很多新的角色，改进了的画面，更好的卡通渲染，非常屌的游戏体验，总之就是如果你是真饭，你就注定被骗钱，如果你对这个漫画/动画一点兴趣都没有，你也就没必要买这个游戏了，反正买了你也不会玩，玩了你也不会喜欢。</div>
+              </div>
+            </div>
+          </div>
+          <div class="container_date">
+            <div class="container_date_in"> <span class="week">周六</span> <span class="month-day">1.31</span> </div>
+          </div>
+          <div class="gamesales_list">
+            <div class="gamesales_block clearfix">
+              <div class="gamesales_author"><a href="http://www.baidu.com"><img src="img/user_head.jpg" alt=""></a></div>
+              <div class="gamesales_text has_score">
+                <div class="score">
+                  <div class="mg-score">8</div>
+                  <div class="avg-score">8.5</div>
+                </div>
+                <div class="game_name">碎月</div>
+                <ul class="game_system">
+                  <li class="style2">X360</li>
+                </ul>
+                <div class="game_detail">文艺游戏，独立游戏，提升你逼格的时候到了，你看看你steam游戏库里都是什么jb游戏，使命召唤，战地，求生之路，除了枪枪枪以外就没有别的东西了？你需要文艺游戏和独立游戏来填补你内心的空虚！这样才能提升你整个作为游戏玩家的格调！然后当上总经理，赢取白富美，走上人生巅峰！</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="load_tip"><a href="javascript:;" class="fl">爷要看上周！</a><a href="javascript:;" class="fr">戳我看下周！</a></div>
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>

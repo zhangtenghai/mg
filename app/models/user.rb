@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   scope :editors, -> {where("role in ('管理员','编辑')")}
   paginates_per 10
 
-  has_attached_file :avatar, :styles => { :medium => "160x160>", :thumb => "45x45>" }, :default_url => "/front/img/user_head.jpg"
+  has_attached_file :avatar, :styles => { :medium => "160x160>", :thumb => "45x45>" }#, :default_url => "/front/img/user_head.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def login=(login)

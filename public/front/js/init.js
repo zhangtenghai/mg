@@ -257,14 +257,14 @@ $('#to-top').click(function(){
        $(this).attr("class","");
    });
    //login
-	var _islogin = false;
-	if(_islogin){
-		$(".user-info").show();
-		$(".user-login").hide();
-	}else{
-		$(".user-info").hide();
-		$(".user-login").show();
-	}
+	// var _islogin = false;
+	// if(_islogin){
+	// 	$(".user-info").show();
+	// 	$(".user-login").hide();
+	// }else{
+	// 	$(".user-info").hide();
+	// 	$(".user-login").show();
+	// }
 	
    $('.user-info').delegate('div','mouseenter',function(e){    
        $(this).siblings(".user-dropbox").fadeIn("slow");
