@@ -1,9 +1,9 @@
 <!--content-->
-<div class="container-wrap" style="background:no-repeat url(<%=@topic.head_img.url(:medium)%>) 50% 0">
+<div class="container-wrap" style="background:no-repeat url(<%=@topic.head_img.url(:medium) if @topic%>) 50% 0">
   <div class="container" style="height:648px">
     <div class="carousel_text">
-      <h2><a href="#"><%=@topic.title%></a></h2>
-      <p><%=@topic.summary%></p>
+      <h2><a href="#"><%=@topic.title if @topic%></a></h2>
+      <p><%=@topic.summary if @topic%></p>
     </div>
     <!-- <div class="score">
       <div class="mg-score">8</div>
@@ -33,23 +33,25 @@
       <!-- 左内容-->
       <div class="main_container clearfix">
         <div class="container_banner">
-          <div class="container_block m_block">
-            <div class="container_blockin">
-              <div class="container_wrap">
-                <div class="common_title">
-                  <h4>头条新闻</h4>
+          <% if @head_news %>
+            <div class="container_block m_block">
+              <div class="container_blockin">
+                <div class="container_wrap">
+                  <div class="common_title">
+                    <h4>头条新闻</h4>
+                  </div>
+                  <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+                  <div class="news_title"><a href="/news/<%=@head_news.id%>"><%=@head_news.title %></a></div>
+                  <div class="comment_num"><%=@head_news.comments.length%></div><a href="/news/<%=@head_news.id%>" class="container_mask"></a>
+                  <div class="container_pic"><a href="/news/<%=@head_news.id%>"><img src="<%=@head_news.head_img.url(:thumb)%>" alt="" /></a></div>
                 </div>
-                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
-                <div class="news_title"><a href="/news/<%=@head_news.id%>"><%=@head_news.title%></a></div>
-                <div class="comment_num"><%=@head_news.comments.length%></div><a href="/news/<%=@head_news.id%>" class="container_mask"></a>
-                <div class="container_pic"><a href="/news/<%=@head_news.id%>"><img src="<%=@head_news.head_img.url(:thumb)%>" alt="" /></a></div>
-              </div>
-              <div class="hotnews_text">
-                <p><%=@head_news.content.length>300 ? @head_news.content[0,300]+"..." :  @head_news.content%></p>
-                <div class="writer"><span class="date">发布于<%=time_words(@head_news.created_at)%>前</span><a href="#">文/<%=@head_news.user.pet_name%></a></div>
+                <div class="hotnews_text">
+                  <p><%=@head_news.content.length>300 ? @head_news.content[0,300]+"..." :  @head_news.content%></p>
+                  <div class="writer"><span class="date">发布于<%=time_words(@head_news.created_at)%>前</span><a href="#">文/<%=@head_news.user.pet_name%></a></div>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
           <% @news.each do |n| %>
             <div class="container_block s_block">
               <div class="container_blockin">

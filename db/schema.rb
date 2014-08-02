@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140727143838) do
+ActiveRecord::Schema.define(version: 20140802131820) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -84,6 +84,19 @@ ActiveRecord::Schema.define(version: 20140727143838) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "list_img_file_name"
+    t.string   "list_img_content_type"
+    t.integer  "list_img_file_size"
+    t.datetime "list_img_updated_at"
+    t.decimal  "score",                 precision: 10, scale: 0
+    t.string   "summary"
+  end
+
+  create_table "games_user_favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "news", force: true do |t|
@@ -100,6 +113,13 @@ ActiveRecord::Schema.define(version: 20140727143838) do
     t.integer  "head_img_file_size"
     t.datetime "head_img_updated_at"
     t.boolean  "is_head"
+  end
+
+  create_table "news_user_favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "news_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", force: true do |t|

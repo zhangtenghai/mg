@@ -6,7 +6,8 @@ class News < ActiveRecord::Base
   belongs_to :game
   belongs_to :user
   has_many :comments
-  
+  has_and_belongs_to_many :users_favorites, :class_name => "User", :join_table => "news_user_favorites"
+
   validates_presence_of :title, :content
 
   has_attached_file :head_img, :styles => {  :thumb => "314x202>" }

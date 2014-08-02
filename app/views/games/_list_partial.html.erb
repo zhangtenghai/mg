@@ -1,0 +1,96 @@
+<div class="container-wrap" style="background:no-repeat url(<%=@topic.head_img.url(:medium) if @topic%>) 50% 0">
+  <div class="container" style="height:648px">
+    <div class="carousel_text">
+      <h2><a href="#"><%=@topic.game.name if @topic%></a></h2>
+      <div class="carousel_tags"><span class="game_tips"><%=@topic.game.sale_date.strftime('%Y年%m月%d日')+'上市' if @topic && @topic.game && @topic.game.sale_date %></span><span class="sns_btn clearfix"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </span></div>
+    </div>
+  </div>
+</div>
+<div class="container-wrap">
+  <div class="container main-content">
+    <div class="row"> 
+      <!-- 右边栏-->
+      <div class="main_aside">
+        <div class="aside_box white_bg">
+          <div class="aside_fav"> <span class="date"><%=Time.now.strftime('%Y年%m月')%></span> <span class="subject">最<a href="/games">热门</a>游戏</span> <span class="tips">登录来为您喜爱的游戏投票</span> </div>
+        </div>
+        <div class="aside_box black_bgs">
+          <div class="aside_fav"> <span class="date"><%=Time.now.strftime('%Y年%m月')%></span> <span class="subject">最<a href="/games/expect">受期待</a>游戏</span> <span class="tips">登录来为您喜爱的游戏投票</span> </div>
+        </div>
+        <div class="aside_box white_search">
+          <%=render "widgets/game_search" %>
+        </div>
+        <div class="aside_box">
+          <%=render "widgets/advertise" %>
+        </div>
+      </div>
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container clearfix">
+        <div class="container_banner">
+          <% @games.each_with_index do |game,index| %>
+            <div class="container_block s_block">
+              <div class="container_blockin">
+                <div class="container_wrap">
+                  <div class="common_title">
+                    <h4>TOP<%=index+1%></h4>
+                  </div>
+                  <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a></div>
+                  <div class="news_title"><%=game.name%></div>
+                  <a href="http://www.mrgamer.com" class="container_mask"></a>
+                  <div class="container_pic"><img src="<%=game.list_img.url(:medium)%>" alt="" /></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="container_banner">
+          <div class="container_date" style="padding-bottom:0;">
+            <div class="container_date_all"> <span class="title">本周游戏发售表</span> <span class="date-area">
+            <%=@week.first.strftime('%Y.%m.%d')%>~<%=@week.last.strftime('%Y.%m.%d')%>
+            </span></div>
+          </div>
+        </div>
+        <div class="container_banner">
+          <% @week.each do |day| %>
+          <% games = Game.where("date(sale_date)=date('#{day.strftime('%Y-%m-%d')}')") %>
+          <% if games.length > 0 %>
+            <div class="container_date">
+            <div class="container_date_in"> <span class="week"><%=I18n.l day, :format => '%A' %></span> <span class="month-day"><%=day.strftime('%m.%d')%></span> </div>
+            </div>
+            <div class="gamesales_list">
+            <% games.each do |game| %>
+              <div class="gamesales_block clearfix">
+              <div class="gamesales_author"><a href="#"><img src="img/user_head.jpg" alt=""></a></div>
+              <div class="gamesales_text <%=game.score.to_f > 0 ? 'has_score' : '' %>">
+                <% if game.score.to_f > 0%>
+                  <div class="score <%=game.sale_date <= day ? 'score-whitebg' : '' %>">
+                    <div class="mg-score"><%=game.score%></div>
+                    <div class="avg-score"><%=game.avg_score%></div>
+                  </div>
+                <% end %>
+                <div class="game_name"><a href="#"><%=game.name%></a></div>
+                <ul class="game_system">
+                  <% random_ary = (1..(game.tags.length)).to_a.shuffle %>
+                  <% game.tags.each_with_index do |tag,index|%>
+                    <li class="style<%=random_ary[index]%>"><%=tag.name%></li>
+                  <% end %>
+                </ul>
+                <div class="game_detail"><%=game.summary%></div>
+              </div>
+              </div>
+            <% end %>
+            </div>
+          <% end %>
+        <% end %>
+          
+        </div>
+
+        <div class="load_tip"><a href="<%=path%>?page=<%=params[:page].to_i-1%>" class="fl">爷要看上周！</a><a href="<%=path%>?page=<%=params[:page].to_i+1%>" class="fr">戳我看下周！</a></div>
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>

@@ -19,7 +19,11 @@ Rails.application.routes.draw do
     get "home/index"
   end
   
-  resources :games, only: [:index,:show]
+  resources :games, only: [:index,:show] do
+    collection do
+      get "expect"
+    end
+  end
   resources :news, only: [:index,:show]
   resources :articles, only: [:index,:show]
   get "previews" => 'previews#index'
