@@ -327,14 +327,15 @@ $('#to-top').click(function(){
             $('#vote-num').text('满星')     
         }else{  
             $('#vote-num').text($spanx/20+'星');  
-        }     
+        }   
     }).delegate('.vote-star','click',function(e){  
         var $mouse = e.pageX - $(this).offset().left;  
         var $span = Math.round($mouse/15)*10;  
         $(this).find('.vote-star-in').stop().animate({width:$span+'%'},100);    
-		 if($span==100){  
+		    if($span==100){  
              $('#vote-num').text('满星')  ;   
-         }            
+         } 
+        $('#star').val($span/20)             
     });    
 	//新闻栏目页 data-tab
 	 $('.date_tab').delegate('td','click',function(){       

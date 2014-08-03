@@ -1,7 +1,7 @@
 <div class="container-wrap" style="background:no-repeat url(<%=@topic.head_img.url(:medium) if @topic%>) 50% 0">
   <div class="container" style="height:648px">
     <div class="carousel_text">
-      <h2><a href="#"><%=@topic.game.name if @topic%></a></h2>
+      <h2><a href="/games/<%=@topic.game.id%>"><%=@topic.game.name if @topic%></a></h2>
       <div class="carousel_tags"><span class="game_tips"><%=@topic.game.sale_date.strftime('%Y年%m月%d日')+'上市' if @topic && @topic.game && @topic.game.sale_date %></span><span class="sns_btn clearfix"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </span></div>
     </div>
   </div>
@@ -37,7 +37,7 @@
                   </div>
                   <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a></div>
                   <div class="news_title"><%=game.name%></div>
-                  <a href="http://www.mrgamer.com" class="container_mask"></a>
+                  <a href="/games/<%=game.id%>" class="container_mask"></a>
                   <div class="container_pic"><img src="<%=game.list_img.url(:medium)%>" alt="" /></div>
                 </div>
               </div>
@@ -62,7 +62,7 @@
             <div class="gamesales_list">
             <% games.each do |game| %>
               <div class="gamesales_block clearfix">
-              <div class="gamesales_author"><a href="#"><img src="img/user_head.jpg" alt=""></a></div>
+              <div class="gamesales_author"><a href="/games/<%=game.id%>"><img src="<%=game.avatar.url%>" alt=""></a></div>
               <div class="gamesales_text <%=game.score.to_f > 0 ? 'has_score' : '' %>">
                 <% if game.score.to_f > 0%>
                   <div class="score <%=game.sale_date <= day ? 'score-whitebg' : '' %>">
@@ -70,7 +70,7 @@
                     <div class="avg-score"><%=game.avg_score%></div>
                   </div>
                 <% end %>
-                <div class="game_name"><a href="#"><%=game.name%></a></div>
+                <div class="game_name"><a href="/games/<%=game.id%>"><%=game.name%></a></div>
                 <ul class="game_system">
                   <% random_ary = (1..(game.tags.length)).to_a.shuffle %>
                   <% game.tags.each_with_index do |tag,index|%>

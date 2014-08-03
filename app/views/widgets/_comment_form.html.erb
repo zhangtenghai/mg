@@ -1,0 +1,22 @@
+<%= form_for(parent_model) do |f| %>
+<%= f.fields_for :comments,  parent_model.errors.count > 0 ? parent_model.comments.last : parent_model.comments.build  do |c| %>
+
+<div class="comment-form">
+  <div class="comment-tr">
+    <%=c.text_area(:content, placeholder: "在评论里用@某人 的形式可以召唤某人", rows:'5', cols: '5') %>
+  </div>
+</div>
+<div class="comment-submit clearfix">
+  <input type="image" src="/front/images/comment_submit.png"  class="fl" alt="发表评论" onclick="submit();">
+  <% if %>
+  <div class="vote-sub">
+    <div class="vote-star">
+      <div class="vote-star-in" style="width:60%"></div>
+      <div class="vote-star-pre"></div>
+     </div>
+  </div>
+  <div class="vote-sub-num">评价<span id="vote-num">3星</span></div>
+  <input type="hidden" name='star' id='star' value='3'>
+</div>
+<% end %>
+<% end %>

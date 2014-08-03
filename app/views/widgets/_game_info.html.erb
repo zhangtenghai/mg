@@ -1,0 +1,48 @@
+<div class="common_title clearfix">
+  <h4>游戏信息</h4>
+</div>
+<div class="hotreview_game">
+  <div class="game_pic_wrap">
+    <div class="game_pic"><a href="#"><img src="<%=game.avatar.url%>" alt="坦克世界" /></a></div>
+    <div class="sns_btn clearfix"> <a href="javascript:;" class="like" title="收藏">like</a></div>
+  </div>
+  <div class="game_info">
+    <div class="game_name"><a href="/games/<%=game.id%>"><%=game.name%></a></div>
+    <div class="game_sdate"><%=game.sale_date.nil? ? '发售日未知' : game.sale_date.strftime('%y年%m月%d日')+'发售'%></div>
+    <ul class="game_system">
+      <% game.tags.limit(4).each_with_index do |tag,index|%>
+        <li class="style<%=index+1%>"><%=tag.name%>
+        </dd>
+      <% end %>
+    </ul>
+  </div>
+  <!-- 简要-->
+  <div class="game_memo">
+    <div class="memo_block clearfix">
+      <div class="memo_banner"> <strong>原名</strong> <span><%=game.origin_name%></span> </div>
+    </div>
+    <div class="memo_block clearfix">
+      <div class="memo_col"> <strong>开发商</strong> <span><%=game.developer%></span> </div>
+      <div class="memo_col"> <strong>官网</strong> <span><a href="<%=game.website%>">超链接</a></span> </div>
+    </div>
+    <div class="memo_block clearfix">
+      <div class="memo_col"> <strong>发行商</strong> <span><%=game.publisher%></span> </div>
+      <div class="memo_col"> <strong>售价</strong> <span><%=game.sale_price%>元</span> </div>
+    </div>
+    <div class="memo_block clearfix">
+      <div class="memo_col"> <strong>评级</strong> <span><%=game.rating%></span> </div>
+      <div class="memo_col"> <strong>玩家平均分</strong> <span><%=game.avg_score%></span> </div>
+    </div>
+    <div class="memo_block clearfix">
+      <div class="memo_col"> <strong>游戏标签</strong> <span>
+        <% game.tags.reverse.each_with_index do |tag,index|%>
+          <%=tag.name%><br />
+        <% end %>
+        </span> </div>
+      <div class="memo_score">
+        <div class="mg-score"><%=game.score%></div>
+      </div>
+    </div>
+  </div>
+  <!-- //简要--> 
+</div>

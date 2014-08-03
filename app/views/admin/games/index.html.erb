@@ -32,7 +32,7 @@
                 <th>官网</th>
                 <th>售价</th>
                 <th>评级</th>
-                <th>平均分</th>
+                <th>评分</th>
                 <th>发售日</th>
                 <th></th>
               </tr>
@@ -51,7 +51,7 @@
                   <td><%=f.website %></td>
                   <td><%=f.sale_price %></td>
                   <td><%=f.rating %></td>
-                  <td><%=f.avg_score %></td>
+                  <td><%=f.score %></td>
                   <td><%=f.sale_date.strftime("%y-%m-%d") %></td>
                   <td>
                     <%= link_to '编辑', edit_admin_game_path(f) %> | 

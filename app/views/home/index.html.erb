@@ -33,25 +33,7 @@
       <!-- 左内容-->
       <div class="main_container clearfix">
         <div class="container_banner">
-          <% if @head_news %>
-            <div class="container_block m_block">
-              <div class="container_blockin">
-                <div class="container_wrap">
-                  <div class="common_title">
-                    <h4>头条新闻</h4>
-                  </div>
-                  <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
-                  <div class="news_title"><a href="/news/<%=@head_news.id%>"><%=@head_news.title %></a></div>
-                  <div class="comment_num"><%=@head_news.comments.length%></div><a href="/news/<%=@head_news.id%>" class="container_mask"></a>
-                  <div class="container_pic"><a href="/news/<%=@head_news.id%>"><img src="<%=@head_news.head_img.url(:thumb)%>" alt="" /></a></div>
-                </div>
-                <div class="hotnews_text">
-                  <p><%=@head_news.content.length>300 ? @head_news.content[0,300]+"..." :  @head_news.content%></p>
-                  <div class="writer"><span class="date">发布于<%=time_words(@head_news.created_at)%>前</span><a href="#">文/<%=@head_news.user.pet_name%></a></div>
-                </div>
-              </div>
-            </div>
-          <% end %>
+          <%=render "widgets/head_news", head_news:@head_news, title: '头条新闻' %>
           <% @news.each do |n| %>
             <div class="container_block s_block">
               <div class="container_blockin">
@@ -69,23 +51,7 @@
           <% end %>
         </div>
         <% @articles.each do |f| %>
-          <div class="container_block b_block">
-            <div class="container_blockin">
-              <div class="container_wrap">
-                <div class="common_title">
-                  <h4><%=f.category%></h4>
-                </div>
-                <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
-                <div class="news_detail">
-                  <h3><a href="#"><%=f.title%></a></h3>
-                  <div class="ralative_tags"> <span><a href="#"><%=f.game.name if f.game%></a></span> <span><%=(f.game.sale_date.strftime('%y年%m月%d日')+"发售") if f.game && f.game.sale_date%></span> <span><a href="#">by <%=f.user.pet_name if f.user%></a></span> </div>
-                  <div class="detail_text"><%=f.summary%></div>
-                </div>
-                <div class="comment_num"><%=f.comments.length%></div><a href="/articles/<%=f.id%>" class="container_mask"></a>
-                <div class="container_pic"><a href="#"><img src="<%=f.avatar.url(:medium)%>" alt="" /></a></div>
-              </div>
-            </div>
-          </div>
+          <%=render "widgets/article_list_info", article:f%>
         <% end %>
         <%= paginate @articles, :theme => "front" %>
         <!-- <div class="dispage">

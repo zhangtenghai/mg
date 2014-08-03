@@ -1,0 +1,72 @@
+<!--content-->
+<div class="container-wrap" style="background:no-repeat url(<%=@game.head_img.url(:medium) if @game%>) 50% 0">
+  <div class="container" style="height:648px">
+    <div class="carousel_text">
+      <h2><%=@game.name%></h2>
+      <p><%=@game.summary%></p>
+    </div>
+  </div>
+</div>
+<div class="container-wrap">
+  <div class="container main-content">
+    <div class="row"> 
+      <!-- 右边栏-->
+      <div class="main_aside fl">
+        <div class="aside_box black_bg">
+          <%=render "widgets/game_info", game:@game%>
+        </div>
+      </div>
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container layout_single clearfix">
+        <div class="container_banner">
+          <% @game.news.each do |news| %>
+            <%=render "widgets/head_news", title:'新闻信息', head_news: news %>
+          <% end %>
+        </div>
+        <% @game.articles.each do |article|%>
+          <%=render "widgets/article_list_info", article:article %>
+        <% end %>
+        <div class="container_banner">
+          <div class="singlegame_article">
+            <div class="container_comment">
+              <h3>游戏评论区</h3>
+              <div class="comment-list" id="comment-list" name="comment-list">
+                <% @game.comments.each do |comment|%>
+                  <%=render 'widgets/comment', comment:comment %>
+                <% end %>
+              </div>
+              <%= form_for(@game) do |f| %>
+                <%= f.fields_for :comments,  @game.errors.count > 0 ? @game.comments.last : @game.comments.build  do |c| %>
+                  <div class="comment-form">
+                    <div class="comment-tr">
+                      <%=c.text_area(:content, placeholder: current_user.nil? ? '请登录评论' : '在评论里用@某人 的形式可以召唤某人', rows:'5', cols: '5') %>
+                    </div>
+                  </div>
+                  <% if current_user %>
+                    <div class="comment-submit clearfix">
+                      <input type="image" src="/front/images/comment_submit.png"  class="fl" alt="发表评论" onclick="submit();">
+                      <% if !@game.users_scores.exists?(current_user) %>
+                      <div class="vote-sub">
+                        <div class="vote-star">
+                          <div class="vote-star-in" style="width:60%"></div>
+                          <div class="vote-star-pre"></div>
+                         </div>
+                      </div>
+                      <div class="vote-sub-num">评价<span id="vote-num">3星</span></div>
+                      <input type="hidden" name='star' id='star' value='3'>
+                      <% end %>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>
+<!--//content--> 

@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :favorite_articles, :class_name => "Article", :join_table => "articles_user_favorites", :order => "id asc"
   has_and_belongs_to_many :favorite_news, :class_name => "News", :join_table => "news_user_favorites", :order => "id asc"
   has_and_belongs_to_many :favorite_games, :class_name => "Game", :join_table => "games_user_favorites", :order => "id asc"
-  
+  has_and_belongs_to_many :game_scores, :class_name => "Game", :join_table => "games_user_scores", :order => "id asc"
+  has_many :games_user_scores
   has_many :game_rating
 
   validates_presence_of :name

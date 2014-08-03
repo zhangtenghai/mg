@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get "home/index"
   end
   
-  resources :games, only: [:index,:show] do
+  resources :games, only: [:index,:show,:update] do
     collection do
       get "expect"
     end

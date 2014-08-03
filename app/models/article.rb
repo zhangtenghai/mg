@@ -14,7 +14,7 @@ class Article < ActiveRecord::Base
   scope :voices, -> {where(category: '业界评论')}
   scope :topics, -> {where("topic is not null")}
   default_scope { enabled.order('id desc') }
-  has_attached_file :head_img, :styles => {  :medium => "1600x873" }
+  has_attached_file :head_img, :styles => {  :medium => "1600x648" }
   validates_attachment_content_type :head_img, :content_type => /\Aimage\/.*\Z/
 
   has_attached_file :avatar, :styles => {  :medium => "990x403" }

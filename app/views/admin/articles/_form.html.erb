@@ -14,8 +14,8 @@
       <%= render "shared/column", name: "主题", content: f.select(:topic, OPTIONS["topics"], {:include_blank => true}, :class => 'form-control select2me') %>
     </div>
     <div class="form-group">
-      <%= render "shared/column", name: "背景图(1600x873)", content: f.file_field(:head_img) %>
-      <%= render "shared/column", name: "缩略图(982x400)", content: f.file_field(:avatar) %>
+      <%= render "shared/column_file", name: "背景图(1600x648)", content: f.file_field(:head_img), url:@article.head_img.url %>
+      <%= render "shared/column_file", name: "缩略图(982x400)", content: f.file_field(:avatar), url:@article.avatar.url %>
     </div>
     <div class="form-group">
       <label class="control-label col-md-1">简介</label>
