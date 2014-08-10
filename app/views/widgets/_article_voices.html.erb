@@ -1,0 +1,16 @@
+<div class="industry_wrap_hd">
+      <% style_ary = ['left:0px;top:17px;','left:325px;top:29px;','left:614px;top:0px;','left:953px;top:12px;','left:101px;top:198px;','left:468px;top:227px;','left:781px;top:186px;'] %>
+      <% voices.each_with_index do |f,index|%>
+        <div class="industry_block_hd" style="<%=style_ary[index]%>">
+        <dl class="clearfix">
+          <dt><img src="<%=f.avatar.url%>" alt="<%=f.user_name%>"></dt>
+          <dd class="name"><%=f.user_name%></dd>
+          <dd class="title"><%=f.user_title%></dd>
+        </dl>
+        <div class="bubble">
+          <div class="arr"></div>
+          <div class="arr_in"></div>
+          <span class="quotes">"</span><%=f.content%><span class="quotes">"</span></div>
+        </div>
+      <% end %>
+</div>

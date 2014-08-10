@@ -1,0 +1,68 @@
+<!--content-->
+<div class="container-wrap" style="background:no-repeat url(<%=@news.head_img.url%>) 50% 0">
+  <div class="container" style="height:648px">
+    <div class="carousel_text">
+      <h2><%=@news.title%></h2>
+      <div class="carousel_tags"><span class="article_author">作者 <%=@news.user.pet_name%></span> <span class="publish_date">发表于<%=time_words(@news.created_at)%>前</span>  <span class="sns_btn clearfix"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </span></div>
+    </div>
+  </div>
+</div>
+<div class="container-wrap">
+  <div class="container main-content">
+    <div class="row"> 
+      <!-- 右边栏-->
+      <div class="main_aside">
+        <div class="aside_box black_bg">
+         <%=render "widgets/game_hot", game:@hot_game %>
+        </div>
+        <div class="aside_box black_bg">
+          <%=render "widgets/author", author:@news.user %>
+        </div>
+        <div class="aside_box white_bg">
+          <%=render "widgets/voice",voices:@voices %>
+        </div>
+        <div class="aside_box">
+          <%=render "widgets/advertise" %>
+        </div>
+      </div>
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container clearfix">
+        <div class="container_article">
+          <div class="container_article_wrap">
+            <%=@news.content%>
+            
+            <div class="container_comment">
+              <h3>评论</h3>
+              <div class="comment-list" id="comment-list" name="comment-list">
+                <% @news.comments.each do |c|%>
+                  <div class="comment_block">
+                      <div class="comment-author"><a href="个人页.html"><img src="<%=c.user.avatar.url%>" alt="" /></a></div>
+                        <div class="comment-text"><%=c.content%></div>
+                        <div class="comment-about"><a href="#comment-list" class="reply">回复</a><a href="/users?user_name=<%=c.user.pet_name%>"><%=c.user.pet_name%></a><%="(#{c.user.signature})"  unless c.user.signature.nil?%> 发表于<%=c.created_at.strftime('%Y年%m月%d日')%></div>
+                    </div>
+                <% end %>
+              </div>
+              <%= form_for(@news) do |f| %>
+                <%= f.fields_for :comments,  @news.errors.count > 0 ? @news.comments.last : @news.comments.build  do |c| %>
+                  <div class="comment-form">
+                    <div class="comment-tr">
+                      <%=c.text_area(:content, placeholder: current_user.nil? ? '请登录评论' : '在评论里用@某人 的形式可以召唤某人', rows:'5', cols: '5') %>
+                    </div>
+                  </div>
+                  <% if current_user %>
+                    <div class="comment-submit clearfix">
+                      <input type="image" src="/front/images/comment_submit.png"  class="fl" alt="发表评论" onclick="submit();">
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>
+<!--//content--> 

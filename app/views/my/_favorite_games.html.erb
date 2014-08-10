@@ -1,0 +1,11 @@
+<ul class="gamefav_list">
+  <% games.each do |game| %>
+    <li>
+      <div class="gamefav_pd">
+        <div class="gamefav_pic">
+          <a href="/games/<%=game.id%>"><img src="<%=game.avatar.url%>" alt=""></a>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

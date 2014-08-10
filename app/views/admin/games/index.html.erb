@@ -52,7 +52,7 @@
                   <td><%=f.sale_price %></td>
                   <td><%=f.rating %></td>
                   <td><%=f.score %></td>
-                  <td><%=f.sale_date.strftime("%y-%m-%d") %></td>
+                  <td><%=f.sale_date.strftime("%y-%m-%d") if f.sale_date%></td>
                   <td>
                     <%= link_to '编辑', edit_admin_game_path(f) %> | 
                     <%= link_to '删除', admin_game_path(f), method: :delete, data: { confirm: '确定删除?' } %>

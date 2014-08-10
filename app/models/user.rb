@@ -13,14 +13,40 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :game_scores, :class_name => "Game", :join_table => "games_user_scores", :order => "id asc"
   has_many :games_user_scores
   has_many :game_rating
-
-  validates_presence_of :name
+  has_many :game_comments, -> { where('game_id is not null').enabled }, class_name: 'Comment'
+  validates_presence_of :name, :pet_name
   scope :unlocked, -> { where("locked_at is  null")}
   scope :editors, -> {where("role in ('管理员','编辑')")}
   paginates_per 10
 
-  has_attached_file :avatar, :styles => { :medium => "160x160>", :thumb => "45x45>" }#, :default_url => "/front/img/user_head.jpg"
+  has_attached_file :avatar, :styles => { :medium => "160x160>", :thumb => "45x45>" }, :default_url => "/front/img/default/user_avatar_default.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  def set_favorite_news(news)
+    if self.favorite_news.exists?(news)
+      self.favorite_news.delete(news)
+    else
+      self.favorite_news << news
+    end
+  end
+
+  def set_favorite_article(article)
+    if self.favorite_articles.exists?(article)
+      self.favorite_articles.delete(article)
+    else
+      self.favorite_articles << article
+    end
+  end
+
+  def set_favorite_game(game)
+    if self.favorite_games.exists?(game)
+      self.favorite_games.delete(game)
+    else
+      self.favorite_games << game
+    end
+  end
+
+
 
   def login=(login)
     @login = login

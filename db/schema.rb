@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803115007) do
+ActiveRecord::Schema.define(version: 20140810043649) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -119,6 +119,10 @@ ActiveRecord::Schema.define(version: 20140803115007) do
     t.integer  "head_img_file_size"
     t.datetime "head_img_updated_at"
     t.boolean  "is_head"
+    t.string   "list_img_file_name"
+    t.string   "list_img_content_type"
+    t.integer  "list_img_file_size"
+    t.datetime "list_img_updated_at"
   end
 
   create_table "news_user_favorites", force: true do |t|
@@ -171,6 +175,9 @@ ActiveRecord::Schema.define(version: 20140803115007) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "pet_name"
+    t.string   "weibo"
+    t.string   "qq"
+    t.string   "signature"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   belongs_to :user
   belongs_to :game
   has_many :comments
+  accepts_nested_attributes_for :comments
   has_and_belongs_to_many :users_favorites, :class_name => "User", :join_table => "articles_user_favorites"
   validates_presence_of :title
 

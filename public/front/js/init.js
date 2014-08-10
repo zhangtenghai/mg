@@ -289,12 +289,14 @@ $('#to-top').click(function(){
    });  
    
    //like
-   $('.main_container').delegate('a.like','click',function(e){ 
-   		if($(this).hasClass("like-active")){
-				$(this).removeClass("like-active");   
-			}else{
-				$(this).addClass("like-active");
-		}  
+   $('.main_container').delegate('a.like','click',function(e){
+      if (!$(this).hasClass("fancybox")){
+        if($(this).hasClass("like-active")){
+          $(this).removeClass("like-active");   
+        }else{
+          $(this).addClass("like-active");
+        } 
+      }
    });
      
 	 

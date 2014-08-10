@@ -2,7 +2,9 @@
   <div class="container" style="height:648px">
     <div class="carousel_text">
       <h2><a href="/games/<%=@topic.game.id%>"><%=@topic.game.name if @topic%></a></h2>
-      <div class="carousel_tags"><span class="game_tips"><%=@topic.game.sale_date.strftime('%Y年%m月%d日')+'上市' if @topic && @topic.game && @topic.game.sale_date %></span><span class="sns_btn clearfix"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </span></div>
+      <div class="carousel_tags"><span class="game_tips"><%=@topic.game.sale_date.strftime('%Y年%m月%d日')+'上市' if @topic && @topic.game && @topic.game.sale_date %></span><span class="sns_btn clearfix"> 
+      <%=render "widgets/like",remote_url: "/ajax/user_favorites/news/#{@topic.game.id}",obj:@topic.game %>
+      </span></div>
     </div>
   </div>
 </div>
@@ -35,7 +37,10 @@
                   <div class="common_title">
                     <h4>TOP<%=index+1%></h4>
                   </div>
-                  <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a></div>
+                  <div class="sns_btn"> 
+                  <%=render "widgets/like",remote_url: "/ajax/user_favorites/game/#{game.id}",obj:game %>
+                  
+                  </div>
                   <div class="news_title"><%=game.name%></div>
                   <a href="/games/<%=game.id%>" class="container_mask"></a>
                   <div class="container_pic"><img src="<%=game.list_img.url(:medium)%>" alt="" /></div>

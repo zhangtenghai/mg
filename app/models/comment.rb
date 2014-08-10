@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  include Disable
+  
   belongs_to :user
   belongs_to :game
   belongs_to :news

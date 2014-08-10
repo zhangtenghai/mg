@@ -23,6 +23,7 @@
             <thead>
               <tr>
                 <th>账号</th>
+                <th>昵称</th>
                 <th>邮箱</th>
                 <th>当前系统角色</th>
                 <th>图像</th>
@@ -34,6 +35,7 @@
               <% @users.each do |item| %>
                 <tr>
                   <td><%= item.name %></td>
+                  <td><%= item.pet_name %></td>
                   <td><%= item.email %></td>
                   <td><%= item.role %></td>
                   <th><%=image_hover('图像' ,item.avatar.url) %></th>

@@ -1,9 +1,10 @@
+<% if game %>
 <div class="common_title clearfix"><a href="#" class="aside_more">查看所有<span>&gt;</span></a>
   <h4>热评游戏</h4>
 </div>
 <div class="hotreview_game">
   <div class="game_pic_wrap">
-    <div class="game_pic"><a href="单个游戏页面.html"><img src="<%=game.avatar.url%>" alt="<%=game.name%>" /></a></div>
+    <div class="game_pic"><a href="单个游戏页面.html"><img src="<%=game.avatar.url %>" alt="<%=game.name %>" /></a></div>
     <div class="game_score">5</div>
   </div>
   <div class="game_info">
@@ -19,8 +20,7 @@
       <div class="comment_text"><%=f.content %><a href="#" class="user-name">by <%=f.user.pet_name%></a></div>
       </div>
     <% end %>
-    
-   
   </div>
   <!-- //评论--> 
 </div>
+<% end %>

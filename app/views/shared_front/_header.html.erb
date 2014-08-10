@@ -7,7 +7,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col span_2"> <a id="logo" href="http://www.mrgamer.com"><img id="default-logo" alt="" src="/front/images/fav.png" /></a></div>
+        <div class="col span_2"> <a id="logo" href="<%=root_path%>"><img id="default-logo" alt="" src="/front/images/fav.png" /></a></div>
         <div class="col span_3">
           <div id="search-outer">
             <div id="search">
@@ -40,7 +40,7 @@
                 </div> -->
             </li>
             <li>
-              <a href="/previews">前瞻</a>
+              <a href="/articles/previews">前瞻</a>
                 <!-- <div class="nav-dropbox">
                     <ul>
                         <li><a href="#">前瞻</a></li>
@@ -49,7 +49,7 @@
                 </div> -->
             </li>
             <li>
-              <a href="#">评测</a>
+              <a href="/articles/evaluations">评测</a>
                <!--  <div class="nav-dropbox">
                     <ul>
                         <li><a href="#">评测</a></li>
@@ -58,7 +58,7 @@
                 </div> -->
             </li>
             <li>
-              <a href="#">业界评论</a>
+              <a href="/articles/voices">业界评论</a>
                <!--  <div class="nav-dropbox">
                     <ul>
                         <li><a href="#">业界评论</a></li>
@@ -81,8 +81,8 @@
               <div class="arr"></div>
                 <div class="arr_in"></div>
               <ul>
-                  <li><a href="/users/profile?user_name=<%=current_user.pet_name%>" class="private-page">个人主页</a></li>
-                    <li><a href="#" class="edit-profile">修改资料</a></li>
+                  <li><a href="/my" class="private-page">个人主页</a></li>
+                    <li><a href="/my/profile" class="edit-profile">修改资料</a></li>
                     <!-- <li class="act"><a href="#" class="new-message">新消息（3条）</a></li> -->
                     <li><%= link_to destroy_user_session_path, { method: "delete",:class=>'login-out'} do %>注销<%end%></li>
 

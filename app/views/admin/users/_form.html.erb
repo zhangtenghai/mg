@@ -21,9 +21,15 @@
     </div>
     <div class="form-group">
       <%= render "shared/column", name: "昵称", content: f.c_text_field(:pet_name) %>
+      <%= render "shared/column", name: "QQ", content: f.c_text_field(:qq) %>
       <%= render "shared/column_file", name: "头像(45x45)", content: f.file_field(:avatar),url: @user.avatar.url %>
     </div>
-
+    <div class="form-group">
+      <label class="control-label col-md-1">个人签名</label>
+      <div class="col-md-11">
+        <%= f.text_area(:signature, :class => "form-control") %>
+      </div>
+    </div>
   </div>
   <div class="form-actions right">
     <button type="submit" class="btn">保存</button>

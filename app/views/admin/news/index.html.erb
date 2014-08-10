@@ -26,6 +26,7 @@
                 <th>操作人</th>
                 <th>发表时间</th>
                 <th>属于游戏</th>
+                <th>背景图</th>
                 <th>缩略图</th>
                 <th>是否头条</th>
                 <th></th>
@@ -38,7 +39,8 @@
                   <td><%= f.user.name if f.user %></td>
                   <td><%= f.posted_at.strftime('%y-%m-%d %H:%M:%S') %></td>
                   <td><%= f.game.name if f.game %></td>
-                  <th><%=image_hover('缩略图' ,f.head_img.url) %></th>
+                  <th><%=image_hover('背景图' ,f.head_img.url) %></th>
+                  <th><%=image_hover('缩略图' ,f.list_img.url) %></th>
                   <td><%= f.is_head ? "是" : "否" %></td>
                   <td>
                     <%= link_to '编辑', edit_admin_news_path(f) %>

@@ -438,7 +438,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_container .container_date .week {font-size:14px;font-weight:bold; }
 .main_container .container_date .month-day {font-size:14px;}
 
-.main_container .hotnews_text{height:227px;padding:15px 25px 10px;overflow:hidden;border:1px solid #999; border-top:0 none;}
+.main_container .hotnews_text{height:226px;padding:15px 25px 10px;overflow:hidden;border:1px solid #999; border-top:0 none;}
 .main_container .hotnews_text p{color:#000;font-size:13px;line-height:24px;padding-bottom:5px;}
 .main_container .hotnews_text .writer{color:#848484;font-size:13px;}
 .main_container .hotnews_text .writer a{color:#848484}

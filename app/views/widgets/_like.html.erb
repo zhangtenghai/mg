@@ -1,0 +1,7 @@
+<% if current_user %>
+  <%=link_to 'like',{}, {href:'javascript:;',title: '收藏',class: eval("current_user.favorite_#{obj.class.to_s.pluralize.downcase}.exists?(obj) ? 'like like-active' : 'like'"),data: {remote_url: remote_url}} %>
+  <!-- <a href="javascript:;" class="share" title="分享">share</a> -->
+<% else %>
+  <a href="#mr-loginbox" class="like fancybox" title="收藏">like</a> 
+  <!-- <a href="javascript:;" class="share" title="分享">share</a> -->
+<% end %>

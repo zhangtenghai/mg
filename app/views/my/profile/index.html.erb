@@ -1,0 +1,69 @@
+<div class="container-wrap main_private">
+  <div class="container" style="height:648px">
+    <div class="carousel_text">
+      <h2>个人主页</h2>
+    </div>
+  </div>
+</div>
+<div class="container-wrap">
+  <div class="container main-content">
+    <div class="row"> 
+      <!-- 右边栏-->
+      <div class="main_aside fl">
+        <div class="aside_box black_bg">
+          <%=render "my/user_menu"%>
+        </div>
+      </div>
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container layout_single clearfix">
+        <!--个人资料-->
+        <div class="container_banner">
+          <div class="container_date">
+            <div class="container_date_all borb"><span class="title">个人资料</span></div>
+          </div>
+        </div>
+        <div class="container_banner">
+          <div class="private_detail">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                  <th scope="row">头像</th>
+                  <td>
+                    <div class="head_preview"><img src="<%=current_user.avatar.url%>"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">昵称</th>
+                  <td><%=current_user.pet_name%></td>
+                </tr>
+                <tr>
+                  <th scope="row">个人签名</th>
+                  <td><%=current_user.signature%></td>
+                </tr>
+                 <tr>
+                  <th scope="row">邮箱</th>
+                  <td><%=current_user.email%></td>
+                </tr>
+                <tr>
+                  <th scope="row">绑定微博账号</th>
+                  <td><div class="bind_weibo"><a href="#"><%=current_user.weibo%></a></div></td>
+                </tr>
+                <tr>
+                  <th scope="row">绑定QQ帐号</th>
+                  <td><div class="bind_qq"><%=current_user.qq%></div></td>
+                </tr>
+                
+                <tr>
+                  <td colspan="2"><form action="/my/profile/edit" method="get"><input type="submit" class="btn_sub" value="修改资料"></form></td>
+                </tr>
+              </tbody></table>
+
+            </div>
+        </div>
+        <!--//个人资料-->
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="common_title clearfix">
+  <h4>个人信息</h4>
+</div>
+<div class="aside_private">
+  <div class="private_pic_wrap">
+    <div class="private_pic"><img src="<%=current_user.avatar.url%>" alt="基王"></div>
+  </div>
+  <div class="private_info">
+    <div class="private_name"><%=current_user.pet_name%></div>
+  </div>
+  <div class="private_ul">
+    <!-- <li><a href="javascript:;">收件箱<span class="tip_num">3</span></a></li> -->
+      <li><a href="/my/profile">个人资料</a></li>
+      <li><a href="javascript:;">绑定微博</a></li>
+      <li><a href="/my/scores">我的评分</a></li>
+      <li><%= link_to destroy_user_session_path, { method: "delete"} do %>退出登录<%end%></li>
+  </div>
+</div>

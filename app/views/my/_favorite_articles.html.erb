@@ -1,0 +1,6 @@
+<!-- <div class="container_date">
+  <div class="container_date_in"> <span class="week">周日</span> <span class="month-day">2.1</span> </div>
+</div> -->
+<% articles.each do |f| %>
+  <%=render "widgets/article_list_info", article:f%>
+<% end %>

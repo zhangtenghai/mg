@@ -1,0 +1,39 @@
+<div class="container-wrap" style="background:no-repeat url(<%=@articles.first.head_img.url(:medium) if @articles.first%>) 50% 0">
+  <div class="container" style="height:648px">
+    <% if title == '业界评论' %>
+    <%=render 'widgets/article_voices', voices:@voices %>
+    <% end %>
+    <div class="carousel_text" style="width:100%">
+      <h2><%=title%></h2>
+    </div>
+  </div>
+</div>
+<div class="container-wrap">
+  <div class="container main-content">
+    <div class="row"> 
+      <!-- 右边栏-->
+      <div class="main_aside">
+        <div class="aside_box">
+          <%=render 'widgets/advertise' %>
+        </div>
+        <div class="aside_box white_bg">
+          <%=render 'widgets/game_sale', games: @games %>
+        </div>
+        <div class="aside_box black_bg">
+          <%=render 'widgets/game_hot', game:@hot_game %>
+        </div>
+      </div>
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container clearfix">
+        <% @articles.each do |f| %>
+          <%=render "widgets/article_list_info", article:f %>
+        <% end %>
+        <%= paginate @articles, :theme => "front" %>
+        <!-- <div class="load_tip"><a href="javascript:;">给爷往下加载！</a></div> -->
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>

@@ -18,18 +18,37 @@ Rails.application.routes.draw do
 
     get "home/index"
   end
+
+  namespace :ajax do
+    get "user_favorites/news/:id" => "user_favorites#news", :defaults => { :format => 'json' }
+    get "user_favorites/game/:id" => "user_favorites#game", :defaults => { :format => 'json' }
+    get "user_favorites/article/:id" => "user_favorites#article", :defaults => { :format => 'json' }
+  end
+
+  get "my" => "my#index"
+  
+  namespace :my do
+    get "profile" => "profile#index"
+    get "profile/edit"=> "profile#edit"
+    post "profile/update" => "profile#update"
+    get "scores" => "scores#index"
+  end
   
   resources :games, only: [:index,:show,:update] do
     collection do
       get "expect"
     end
   end
-  resources :news, only: [:index,:show]
-  resources :articles, only: [:index,:show]
-  get "previews" => 'previews#index'
-  get "evaluations" => 'evaluations#index'
-  get "comments" => 'comments#index'
-  
+  resources :news, only: [:index,:show,:update]
+  resources :comments, only: [:destroy]
+  resources :articles, only: [:show,:update] do
+    collection do
+      get "previews"
+      get "evaluations"
+      get "voices"
+    end
+  end
+
 
   root 'home#index'
   get "home/index"

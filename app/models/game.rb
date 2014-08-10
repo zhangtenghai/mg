@@ -19,13 +19,12 @@ class Game < ActiveRecord::Base
   has_attached_file :head_img, :styles => { :medium => "1600x648>" }
   validates_attachment_content_type :head_img, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :avatar, :styles => { :medium => "160x160>" }
+  has_attached_file :avatar, :styles => { :medium => "160x160>" }, :default_url => "/front/img/default/game_avatar_default.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :list_img, :styles => { :medium => "314x202>" }
+  has_attached_file :list_img, :styles => { :medium => "311x200>" }
   validates_attachment_content_type :list_img, :content_type => /\Aimage\/.*\Z/
 
-  scope :hot_games, -> { where("")}
   paginates_per 10
 
   def validate_score
@@ -39,7 +38,8 @@ class Game < ActiveRecord::Base
   end
 
   def self.get_today_hot_game
-    comment = Comment.select("game_id").where("date(created_at)=date(now())").group("game_id").order("count(game_id) desc").first
+    p 'get_today_hot_game'
+    comment = Comment.select("game_id").where("date(created_at)=date(now()) and game_id is not null").group("game_id").order("count(game_id) desc").first
     if comment
       return Game.find_by_id(comment.game_id)
     end
@@ -49,16 +49,16 @@ class Game < ActiveRecord::Base
   def self.get_month_hot_games
     games_ary = Game.where("id in (select game_id from mg_dev.games_user_favorites where date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m')
                   group by game_id order by count(game_id) desc ) and sale_date>now()").limit(6)
-    if games_ary.length < 6
-      games_ary= games_ary + Game.last(6 - games_ary.length)
-    end
+    # if games_ary.length < 6
+    #   games_ary= games_ary + Game.last(6 - games_ary.length)
+    # end
   end
 
   def self.get_month_expect_games
     games_ary = Game.where("id in (select game_id from mg_dev.games_user_favorites where date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m')
                   group by game_id order by count(game_id) desc ) and sale_date<now()").limit(6)
-    if games_ary.length < 6
-      games_ary= games_ary + Game.last(6 - games_ary.length)
-    end
+    # if games_ary.length < 6
+    #   games_ary= games_ary + Game.last(6 - games_ary.length)
+    # end
   end
 end

@@ -1,0 +1,63 @@
+<!--content-->
+<div class="container-wrap" style="background:no-repeat url(<%=@head_news.head_img.url if @head_news%>) 50% 0">
+  <div class="container" style="height:648px;">
+    <div class="carousel_text">
+      <h2>新闻</h2>
+    </div>
+  </div>
+</div>
+<div class="container-wrap">
+  <div class="container">
+    <div class="row"> 
+      <!-- 右边栏-->
+      <div class="main_aside">
+        <div class="aside_box white_bg">
+
+        </div>
+        <div class="aside_box white_bg">
+          <%=render "widgets/game_sale", games:@games %>
+        </div>
+        <div class="aside_box black_bg">
+          <%=render "widgets/game_hot", game:@hot_game %>
+        </div>
+        <div class="aside_box white_bg">
+          <%=render "widgets/voice",voices:@voices %>
+        </div>
+      </div>
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container clearfix">
+        <div class="container_date">
+          <div class="container_date_in">
+            <span class="week">周日</span>
+            <span class="month-day">2.1</span>
+          </div>
+        </div>
+        <div class="container_banner">
+          <%=render "widgets/head_news", head_news:@head_news, title: '头条新闻' %>
+          <% @news.each do |n| %>
+            <div class="container_block s_block">
+              <div class="container_blockin">
+                <div class="container_wrap">
+                  <div class="common_title">
+                    <h4>新闻</h4>
+                  </div>
+                  <div class="sns_btn"> 
+                    <%=render "widgets/like",remote_url: "/ajax/user_favorites/news/#{n.id}",obj:n %>
+                  </div>
+                  <div class="news_title"><a href="#"><%=n.title%></a></div>
+                  <div class="comment_num"><%=n.comments.length%></div><a href="/news/<%=n.id%>" class="container_mask"></a>
+                  <div class="container_pic"><a href="#"><img src="<%=n.list_img.url(:thumb)%>" alt="" /></a></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= paginate @news, :theme => "front" %>
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>
+<!--//content--> 
