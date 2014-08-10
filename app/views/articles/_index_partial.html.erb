@@ -1,4 +1,4 @@
-<div class="container-wrap" style="background:no-repeat url(<%=@articles.first.head_img.url(:medium) if @articles.first%>) 50% 0">
+<div class="container-wrap" style="background:no-repeat url(<%=@articles.first.head_img.url(:medium) if @articles.first%>) 50% 0;background-size:cover;">
   <div class="container" style="height:648px">
     <% if title == '业界评论' %>
     <%=render 'widgets/article_voices', voices:@voices %>

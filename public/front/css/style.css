@@ -474,7 +474,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_aside .black_bg{ background:#2d2d2d no-repeat url(../images/sidebar-blackbg.png);}
 .main_aside .black_bgs{ background:#2d2d2d no-repeat url(../images/sidebar-blackbgs.png);}
 .main_aside .white_bg{ background:#f4f4f4 no-repeat url(../images/sidebar-whitebg.jpg);}
-.main_aside .white_search{ background:#f4f4f4 no-repeat url(../images/game-search-side-bg.png);}
+.main_aside .white_search{ background:#efebef no-repeat url(../images/game-search-side-bg.png);}
 .main_aside .container_wrap{ position:relative;}
 .main_aside .container_pic img{ display:block;}
 
