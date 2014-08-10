@@ -8,7 +8,9 @@
         <div class="common_title">
           <h4>新闻</h4>
         </div>
-        <div class="sns_btn"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </div>
+        <div class="sns_btn">
+          <%=render "widgets/like",remote_url: "/ajax/user_favorites/news/#{n.id}",obj:n %> 
+        </div>
         <div class="news_title"><a href="#"><%=n.title%></a></div>
         <div class="comment_num"><%=n.comments.length%></div><a href="/news/<%=n.id%>" class="container_mask"></a>
         <div class="container_pic"><a href="#"><img src="<%=n.list_img.url(:thumb)%>" alt="" /></a></div>
