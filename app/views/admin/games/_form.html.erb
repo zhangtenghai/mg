@@ -14,7 +14,13 @@
     </div>
     <div class="form-group">
       <%= render "shared/column", name: "评级", content: f.c_text_field(:rating) %>
-      <%= render "shared/column", name: "售价", content: f.c_text_field(:sale_price) %>
+      <label class="control-label col-md-1">售价</label>
+      <div class="col-md-2">
+        <%=f.c_text_field(:sale_price)%>
+      </div>
+      <div class="col-md-1">
+        <%=f.select(:sale_unit, OPTIONS["sale_units"], {}, :class => 'form-control select2me')%>
+      </div>
       <%= render "shared/column", name: "评分", content: f.c_text_field(:score) %>
     </div>
     <div class="form-group">
@@ -25,9 +31,16 @@
     <div class="form-group">
       <label class="control-label col-md-1">标签</label>
       <div class="col-md-11">
-        <%=f.c_text_field(:tag_list) %>
+        <%=f.c_text_field(:tag_list,class: 'tag_select form-control') %>
       </div>
     </div>
+    <div class="form-group">
+      <label class="control-label col-md-1">平台</label>
+      <div class="col-md-11">
+        <%=f.c_text_field(:platform_list,class: 'tag_select form-control') %>
+      </div>
+    </div>
+    
      <div class="form-group">
       <label class="control-label col-md-1">简介</label>
       <div class="col-md-11">

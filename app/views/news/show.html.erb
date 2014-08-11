@@ -12,9 +12,11 @@
     <div class="row"> 
       <!-- 右边栏-->
       <div class="main_aside">
+        <% if @news.game%>
         <div class="aside_box black_bg">
-         <%=render "widgets/game_hot", game:@hot_game %>
+         <%=render "widgets/game_info", game:@news.game %>
         </div>
+        <% end %>
         <div class="aside_box black_bg">
           <%=render "widgets/author", author:@news.user %>
         </div>
@@ -36,18 +38,14 @@
               <h3>评论</h3>
               <div class="comment-list" id="comment-list" name="comment-list">
                 <% @news.comments.each do |c|%>
-                  <div class="comment_block">
-                      <div class="comment-author"><a href="个人页.html"><img src="<%=c.user.avatar.url%>" alt="" /></a></div>
-                        <div class="comment-text"><%=c.content%></div>
-                        <div class="comment-about"><a href="#comment-list" class="reply">回复</a><a href="/users?user_name=<%=c.user.pet_name%>"><%=c.user.pet_name%></a><%="(#{c.user.signature})"  unless c.user.signature.nil?%> 发表于<%=c.created_at.strftime('%Y年%m月%d日')%></div>
-                    </div>
+                  <%=render 'widgets/comment',comment:c, has_score: false %>
                 <% end %>
               </div>
               <%= form_for(@news) do |f| %>
                 <%= f.fields_for :comments,  @news.errors.count > 0 ? @news.comments.last : @news.comments.build  do |c| %>
                   <div class="comment-form">
                     <div class="comment-tr">
-                      <%=c.text_area(:content, placeholder: current_user.nil? ? '请登录评论' : '在评论里用@某人 的形式可以召唤某人', rows:'5', cols: '5') %>
+                      <%=c.text_area(:content, placeholder: current_user.nil? ? '请登录评论' : '', rows:'5', cols: '5') %>
                     </div>
                   </div>
                   <% if current_user %>

@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-  $('#game_tag_list').select2({
+  $('.tag_select').select2({
         tags:[],
         allowClear: true
   });

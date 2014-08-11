@@ -1,5 +1,11 @@
 <% content_for :page_title do %>
-<%= render "title_bar" %>
+<% path = 
+   case @article.category
+   when '前瞻' then previews_admin_articles_path
+   when '评测' then evaluations_admin_articles_path
+   when '业界评论' then voices_admin_articles_path
+   else admin_articles_url end %>
+<%= render "title_bar",title:@article.category,path:path  %>
 <% end %>
 <div class="row">
   <div class="col-md-12">

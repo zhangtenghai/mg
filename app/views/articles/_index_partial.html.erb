@@ -16,12 +16,14 @@
         <div class="aside_box">
           <%=render 'widgets/advertise' %>
         </div>
-        <div class="aside_box white_bg">
-          <%=render 'widgets/game_sale', games: @games %>
-        </div>
         <div class="aside_box black_bg">
           <%=render 'widgets/game_hot', game:@hot_game %>
         </div>
+        <% if title == '业界评论' %>
+          <div class="aside_box white_bg">
+            <%=render 'widgets/voice', voices:@voices %>
+          </div>
+        <% end %>
       </div>
       <!-- //右边栏--> 
       <!-- 左内容-->

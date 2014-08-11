@@ -41,6 +41,6 @@ class Admin::GamesController < ApplicationController
 
   private
     def game_params
-      params.require(:game).permit(:tag_list,:name,:head_img,:avatar,:list_img,:summary,:score, :origin_name, :developer, :website, :publisher, :sale_price, :rating, :avg_score, :sale_date)
+      params.require(:game).permit(:tag_list,:platform_list, :name,:head_img,:avatar,:sale_unit, :list_img,:summary,:score, :origin_name, :developer, :website, :publisher, :sale_price, :rating, :avg_score, :sale_date)
     end
 end

@@ -3,7 +3,7 @@
     <div class="carousel_text">
       <h2><a href="/games/<%=@topic.game.id%>"><%=@topic.game.name if @topic%></a></h2>
       <div class="carousel_tags"><span class="game_tips"><%=@topic.game.sale_date.strftime('%Y年%m月%d日')+'上市' if @topic && @topic.game && @topic.game.sale_date %></span><span class="sns_btn clearfix"> 
-      <%=render "widgets/like",remote_url: "/ajax/user_favorites/news/#{@topic.game.id}",obj:@topic.game %>
+      
       </span></div>
     </div>
   </div>
@@ -18,6 +18,9 @@
         </div>
         <div class="aside_box black_bgs">
           <div class="aside_fav"> <span class="date"><%=Time.now.strftime('%Y年%m月')%></span> <span class="subject">最<a href="/games/expect">受期待</a>游戏</span> <span class="tips">登录来为您喜爱的游戏投票</span> </div>
+        </div>
+        <div class="aside_box white_bg">
+          <%=render "widgets/game_sale",games:@game_sales %>
         </div>
         <div class="aside_box white_search">
           <%=render "widgets/game_search" %>
@@ -46,7 +49,6 @@
                   <div class="container_pic"><img src="<%=game.list_img.url(:medium)%>" alt="" /></div>
                 </div>
               </div>
-            </div>
           <% end %>
         </div>
 

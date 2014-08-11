@@ -3,8 +3,10 @@
 </div>
 <div class="hotreview_game">
   <div class="game_pic_wrap">
-    <div class="game_pic"><a href="#"><img src="<%=game.avatar.url%>" alt="<%=game.name%>" /></a></div>
-    <div class="sns_btn clearfix"> <a href="javascript:;" class="like" title="收藏">like</a></div>
+    <div class="game_pic"><a href="/games/<%=game.id%>"><img src="<%=game.avatar.url%>" alt="<%=game.name%>" /></a></div>
+    <div class="sns_btn clearfix"> 
+      <%=render "widgets/like",remote_url: "/ajax/user_favorites/game/#{game.id}",obj:game %>
+    </div>
   </div>
   <div class="game_info">
     <div class="game_name"><a href="/games/<%=game.id%>"><%=game.name%></a></div>
@@ -27,7 +29,7 @@
     </div>
     <div class="memo_block clearfix">
       <div class="memo_col"> <strong>发行商</strong> <span><%=game.publisher%></span> </div>
-      <div class="memo_col"> <strong>售价</strong> <span><%=game.sale_price%>元</span> </div>
+      <div class="memo_col"> <strong>售价</strong> <span><%=game.sale_price%><%=game.sale_unit%></span> </div>
     </div>
     <div class="memo_block clearfix">
       <div class="memo_col"> <strong>评级</strong> <span><%=game.rating%></span> </div>
@@ -35,8 +37,8 @@
     </div>
     <div class="memo_block clearfix">
       <div class="memo_col"> <strong>游戏标签</strong> <span>
-        <% game.tags.reverse.each_with_index do |tag,index|%>
-          <%=tag.name%><br />
+        <% game.platform_list.each_with_index do |tag,index|%>
+          <%=tag%><br />
         <% end %>
         </span> </div>
       <div class="memo_score">

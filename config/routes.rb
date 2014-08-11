@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
   
   namespace :admin do
-    resources :articles
+    resources :articles do
+      collection do
+        get "previews"
+        get "evaluations"
+        get "voices"
+      end
+    end
     resources :news
     resources :games
     resources :comments

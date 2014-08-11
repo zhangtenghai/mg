@@ -3,7 +3,7 @@ class Game < ActiveRecord::Base
   include Searchable
 
   acts_as_ordered_taggable
-  
+  acts_as_taggable_on :platform
   quick_search :name, :origin_name, :developer, :publisher, :website
   has_many :game_rating
   has_many :news
@@ -25,11 +25,15 @@ class Game < ActiveRecord::Base
   has_attached_file :list_img, :styles => { :medium => "311x200>" }
   validates_attachment_content_type :list_img, :content_type => /\Aimage\/.*\Z/
 
+  scope :get_current_year_not_sale_games, -> {where("date_format(sale_date,'%Y')=date_format(now(),'%Y') and sale_date>=now()").order("sale_date")}
+  default_scope { enabled }
   paginates_per 10
 
   def validate_score
     errors.add("评分", "必须在1到10之间") if self.score.to_f < 0 || self.score.to_f >10
   end
+
+  
 
   def set_user_score(score)
     if !self.users_scores.exists?(User.current_user)
@@ -38,7 +42,6 @@ class Game < ActiveRecord::Base
   end
 
   def self.get_today_hot_game
-    p 'get_today_hot_game'
     comment = Comment.select("game_id").where("date(created_at)=date(now()) and game_id is not null").group("game_id").order("count(game_id) desc").first
     if comment
       return Game.find_by_id(comment.game_id)
@@ -48,7 +51,7 @@ class Game < ActiveRecord::Base
 
   def self.get_month_hot_games
     games_ary = Game.where("id in (select game_id from mg_dev.games_user_favorites where date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m')
-                  group by game_id order by count(game_id) desc ) and sale_date>now()").limit(6)
+                  group by game_id order by count(game_id) desc ) and sale_date>=now()").limit(6)
     # if games_ary.length < 6
     #   games_ary= games_ary + Game.last(6 - games_ary.length)
     # end
@@ -56,7 +59,7 @@ class Game < ActiveRecord::Base
 
   def self.get_month_expect_games
     games_ary = Game.where("id in (select game_id from mg_dev.games_user_favorites where date_format(created_at,'%Y-%m')=date_format(now(),'%Y-%m')
-                  group by game_id order by count(game_id) desc ) and sale_date<now()").limit(6)
+                  group by game_id order by count(game_id) desc ) and sale_date<=now()").limit(6)
     # if games_ary.length < 6
     #   games_ary= games_ary + Game.last(6 - games_ary.length)
     # end

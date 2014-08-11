@@ -2,7 +2,7 @@ class NewsController < ApplicationController
   
   def index
     @head_news = News.get_head_news
-    @games = Game.enabled.order("sale_date desc").limit(7)
+    @games = Game.get_current_year_not_sale_games.limit(7)
     #@news = News.get_date_news(params[:date])
     @news = News.page(params[:page]).per(20)
     #@dates = @news.select("created_at").group(:created_at).distinct

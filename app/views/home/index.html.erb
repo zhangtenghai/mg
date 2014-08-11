@@ -35,21 +35,7 @@
         <div class="container_banner">
           <%=render "widgets/head_news", head_news:@head_news, title: '头条新闻' %>
           <% @news.each do |n| %>
-            <div class="container_block s_block">
-              <div class="container_blockin">
-                <div class="container_wrap">
-                  <div class="common_title">
-                    <h4>新闻</h4>
-                  </div>
-                  <div class="sns_btn">
-                    <%=render "widgets/like",remote_url: "/ajax/user_favorites/news/#{n.id}",obj:n %>
-                  </div>
-                  <div class="news_title"><a href="#"><%=n.title%></a></div>
-                  <div class="comment_num"><%=n.comments.length%></div><a href="/news/<%=n.id%>" class="container_mask"></a>
-                  <div class="container_pic"><a href="#"><img src="<%=n.list_img.url(:thumb)%>" alt="" /></a></div>
-                </div>
-              </div>
-            </div>
+            <%=render 'widgets/news_info',news:n, title:'新闻' %>
           <% end %>
         </div>
         <% @articles.each do |f| %>

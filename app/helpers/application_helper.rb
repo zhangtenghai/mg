@@ -68,6 +68,10 @@ module ApplicationHelper
     link_to(name,'javascript:;',class: 'popovers',data: {trigger: 'hover',html: 'true', content: "<img src='"+url+"' style='height:150px; width:250px;'/>", "original-title"=> "图片" } )
   end
   
+  def raw_title(title)
+    title.strip.gsub(' ','<br>')
+  end
+
   def resource_name
     :user
   end

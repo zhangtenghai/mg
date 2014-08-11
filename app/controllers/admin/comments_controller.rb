@@ -1,5 +1,5 @@
 class Admin::CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /comments
   # GET /comments.json
@@ -51,14 +51,11 @@ class Admin::CommentsController < ApplicationController
     end
   end
 
-  # DELETE /comments/1
-  # DELETE /comments/1.json
   def destroy
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    comment = Comment.find_by_id(params[:id])
+    comment.disable
+    comment.save
+    redirect_to request.referer
   end
 
   private

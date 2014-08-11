@@ -33,14 +33,14 @@
               <h3>游戏评论区</h3>
               <div class="comment-list" id="comment-list" name="comment-list">
                 <% @game.comments.each do |comment|%>
-                  <%=render 'widgets/comment', comment:comment %>
+                <%=render 'widgets/comment',comment:comment, has_score: true %>
                 <% end %>
               </div>
               <%= form_for(@game) do |f| %>
                 <%= f.fields_for :comments,  @game.errors.count > 0 ? @game.comments.last : @game.comments.build  do |c| %>
                   <div class="comment-form">
                     <div class="comment-tr">
-                      <%=c.text_area(:content, placeholder: current_user.nil? ? '请登录评论' : '在评论里用@某人 的形式可以召唤某人', rows:'5', cols: '5') %>
+                      <%=c.text_area(:content, placeholder: current_user.nil? ? '请登录评论' : '', rows:'5', cols: '5') %>
                     </div>
                   </div>
                   <% if current_user %>

@@ -10,10 +10,11 @@ class ArticlesController < ApplicationController
 
   def voices
     @articles = Article.enabled.voices.page(params[:page])
+    @voices = Voice.limit(7)
   end
 
   def show
-     @article = Article.find_by_id(params[:id])
+    @article = Article.find_by_id(params[:id])
   end
 
   def update
@@ -29,7 +30,5 @@ class ArticlesController < ApplicationController
 
     def set_data
       @hot_game = Game.get_today_hot_game
-      @games = Game.enabled.order("sale_date desc").limit(7)
-      @voices = Voice.limit(7)
     end
 end
