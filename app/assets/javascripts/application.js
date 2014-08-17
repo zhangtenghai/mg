@@ -12,4 +12,4 @@
 //
 //= require jquery_ujs
 //= require base
-//= require ckeditor/init
+
