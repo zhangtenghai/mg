@@ -19,6 +19,15 @@ class GamesController < ApplicationController
     @week = generate_week(Date.today,params[:page])
   end
 
+  def search
+    @game_results = Game.search(params[:game_search]).where("avg_score>=#{params[:min_score].to_i}")
+    if !params[:platform].blank?
+      @game_results = @game_results.tagged_with(params[:platform], :on => :platform, :any => true)
+    end
+    @game_results = @game_results.page(params[:page]).per(20)
+    @game_sales = Game.get_current_year_not_sale_games.limit(7)
+  end
+
   def update
     @game = Game.find_by_id(params[:id])
     if params[:star]

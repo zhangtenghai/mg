@@ -3,5 +3,5 @@ jQuery(document).ready(function() {
         tags:[],
         allowClear: true
   });
-
+  
 });

@@ -1,0 +1,42 @@
+<% content_for :page_title do %>
+<%= render "title_bar" %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box">
+      <div class="dataTables_wrapper form-inline" role="grid">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>链接</th>
+                <th>背景图</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @adverts.each do |f| %>
+                <tr>
+                  <td><%=f.name %></td>
+                  <td><%=f.link %></td>
+                  <th><%=image_hover('背景图' ,f.list_img.url) %></th>
+                  <td>
+                    <%= link_to '编辑', edit_admin_advert_path(f) %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= paginate @adverts, :theme => "admin" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

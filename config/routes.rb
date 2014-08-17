@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
+  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :users, :controllers => {sessions: 'sessions',registrations: 'registrations'}
+
   
   namespace :admin do
     resources :articles do
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
         get "voices"
       end
     end
+    resources :adverts
     resources :news
     resources :games
     resources :comments
@@ -43,6 +46,7 @@ Rails.application.routes.draw do
   resources :games, only: [:index,:show,:update] do
     collection do
       get "expect"
+      get "search"
     end
   end
   resources :news, only: [:index,:show,:update]
@@ -55,7 +59,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  resources :search, only: [:index]
   root 'home#index'
   get "home/index"
   get "admin" => "admin/home#index"

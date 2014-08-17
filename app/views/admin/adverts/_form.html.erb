@@ -1,0 +1,16 @@
+<%= form_for([:admin, @advert], :html => { :class => "form-horizontal" }) do |f| %>
+  <div class="form-body">
+    <%= f.error_messages %>
+    <h4 class="form-section">基本信息</h4>
+    <div class="form-group">
+      <%= render "shared/column", name: "名称", content: f.c_text_field(:name) %>
+      <%= render "shared/column", name: "链接", content: f.c_text_field(:link) %>
+      <%= render "shared/column_file", name: "背景图(266x286)", content: f.file_field(:list_img),url: @advert.list_img.url %>
+    </div>
+    
+  </div>
+  <div class="form-actions right">
+    <button type="submit" class="btn">保存</button>
+  </div>
+<% end %>
+     

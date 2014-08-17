@@ -651,7 +651,7 @@ var Layout = function () {
       handleGoTop(); //handles scroll to top functionality in the footer
       handleTabs(); // handle bootstrah tabs
       handleTheme(); // handles style customer tool
-      handleStickyActionButtons(); // handles actions buttons position
+      // handleStickyActionButtons(); // handles actions buttons position
 
       // reinitialize the layout on window resize
       Metronic.addResizeHandler(handleSidebarAndContentHeight); // recalculate sidebar & content height on window resize

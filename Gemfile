@@ -10,8 +10,9 @@ gem 'kaminari', '~> 0.15.1'
 gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'paperclip'
+gem 'mini_magick'
 gem 'dotiw'
-
+gem 'ckeditor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

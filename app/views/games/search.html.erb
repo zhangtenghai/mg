@@ -32,47 +32,24 @@
       <!-- //右边栏--> 
       <!-- 左内容-->
       <div class="main_container clearfix">
-        <div class="container_banner">
-          <% @games.each_with_index do |game,index| %>
-            <div class="container_block s_block">
-              <div class="container_blockin">
-                <div class="container_wrap">
-                  <div class="common_title">
-                    <h4>TOP<%=index+1%></h4>
-                  </div>
-                  <div class="sns_btn"> 
-                  <%=render "widgets/like",remote_url: "/ajax/user_favorites/game/#{game.id}",obj:game %>
-                  
-                  </div>
-                  <div class="news_title"><%=game.name%></div>
-                  <a href="/games/<%=game.id%>" class="container_mask"></a>
-                  <div class="container_pic"><img src="<%=game.list_img.url(:medium)%>" alt="" /></div>
-                </div>
-              </div>
-          <% end %>
-        </div>
+
 
         <div class="container_banner">
           <div class="container_date" style="padding-bottom:0;">
-            <div class="container_date_all"> <span class="title">本周游戏发售表</span> <span class="date-area">
-            <%=@week.first.strftime('%Y.%m.%d')%>~<%=@week.last.strftime('%Y.%m.%d')%>
-            </span></div>
+            <div class="container_date_all"> <span class="title">游戏搜索结果</span> </div>
           </div>
         </div>
         <div class="container_banner">
-          <% @week.each do |day| %>
-          <% games = Game.where("date(sale_date)=date('#{day.strftime('%Y-%m-%d')}')") %>
-          <% if games.length > 0 %>
-            <div class="container_date">
-            <div class="container_date_in"> <span class="week"><%=I18n.l day, :format => '%A' %></span> <span class="month-day"><%=day.strftime('%m.%d')%></span> </div>
-            </div>
+          
+         
+         
             <div class="gamesales_list">
-            <% games.each do |game| %>
+            <% @game_results.each do |game| %>
               <div class="gamesales_block clearfix">
               <div class="gamesales_author"><a href="/games/<%=game.id%>"><img src="<%=game.avatar.url%>" alt=""></a></div>
               <div class="gamesales_text <%=game.score.to_f > 0 ? 'has_score' : '' %>">
                 <% if game.score.to_f > 0%>
-                  <div class="score <%=game.sale_date <= day ? 'score-whitebg' : '' %>">
+                  <div class="score <%=game.sale_date <= Date.today ? 'score-whitebg' : '' %>">
                     <div class="mg-score"><%=game.score%></div>
                     <div class="avg-score"><%=game.avg_score%></div>
                   </div>
@@ -88,13 +65,11 @@
               </div>
               </div>
             <% end %>
-            </div>
-          <% end %>
-        <% end %>
           
+       
         </div>
 
-        <div class="load_tip"><a href="<%=path%>?page=<%=params[:page].to_i-1%>" class="fl">爷要看上周！</a><a href="<%=path%>?page=<%=params[:page].to_i+1%>" class="fr">戳我看下周！</a></div>
+        <%= paginate @game_results, :theme => "front" %>
         <div class="clear"></div>
       </div>
       <!-- //左内容--> 

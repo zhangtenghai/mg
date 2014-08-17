@@ -2,6 +2,7 @@
 module ApplicationHelper
   ActionView::Base.default_form_builder = CustomFormBuilder
 
+
   def page_title
     case params[:action]
     when "edit", "update"

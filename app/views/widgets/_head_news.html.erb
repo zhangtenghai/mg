@@ -13,7 +13,7 @@
         <div class="container_pic"><img src="<%=head_news.list_img.url%>" alt="" /></div>
       </div>
       <div class="hotnews_text">
-        <p><%=head_news.content.length>300 ? head_news.content[0,300]+"..." :  head_news.content%></p>
+        <p><%=(head_news.summary.length>300 ? head_news.summary[0,300]+"..." :  head_news.summary) if head_news.summary%></p>
         <div class="writer"><span class="date">发布于<%=time_words(head_news.created_at)%>前</span>文/<%=head_news.user.pet_name%></div>
       </div>
     </div>

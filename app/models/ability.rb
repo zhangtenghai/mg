@@ -5,6 +5,13 @@ class Ability
     user ||= User.new
     if user.role == '管理员'
         can :manage, :all
+    elsif user.role == '编辑'
+        can :manage, Article
+        can :manage, News
+        can :manage, Game
+        can :edit, :news_menu
+        can :edit, :article_menu
+        can :edit, :game_menu
     end
     # Define abilities for the passed in user here. For example:
     #

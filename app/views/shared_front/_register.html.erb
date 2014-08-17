@@ -1,22 +1,42 @@
+  <script type="text/javascript">
+  $(document).on('submit', '#sign_up_user', function(e){
+
+  }).on('ajax:success', '#sign_up_user', function(e, data, status, xhr) {
+      if (data.success) {
+        location.reload();
+      }else{
+        $("#msg_sign_up").text('注册失败,请检查')
+      };
+  }).on('ajax:error', '#sign_up_user', function(e, data, status, xhr) {
+      $("#msg_sign_up").text('请求错误')
+  });
+</script>
   <div id="mr-regbox" style="display:none;" class="popbox">
   <div class="common_title clearfix"> <a href="#" class="aside_more">已有账号？登录<span>&gt;</span></a>
     <h4>新用户注册</h4>
     <div class="reg_tab">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), 
+        :html => {:id => "sign_up_user"}, :format => :json, :remote => true ) do |f| %>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <th scope="row">昵称</th>
-            <td><input type="text" class="reg_input" /></td>
-          </tr>
-          <tr>
-            <th scope="row">密码</th>
-            <td><input type="password" class="reg_input" /></td>
+            <th scope="row">账号</th>
+            <td><%= f.text_field :name, class: 'reg_input' %></td>
           </tr>
           <tr>
             <th scope="row">邮箱</th>
-            <td><input type="text" class="reg_input" /></td>
+            <td><%= f.email_field :email, autofocus: true, class: 'reg_input' %></td>
           </tr>
           <tr>
-            <td colspan="2"><a href="#" class="btn-reg">注册</a><div class="reg_tips">注册用户可以收藏新闻、文章以及游戏。发表评论、给游戏评分并且可以参与一系列网站活动。</div></td>
+            <th scope="row">密码</th>
+            <td><%= f.password_field :password, autocomplete: "off", class: 'reg_input' %></td>
+          </tr>
+          <tr>
+            <th scope="row">确认密码</th>
+            <td><%= f.password_field :password_confirmation, autocomplete: "off", class: 'reg_input' %></td>
+          </tr>
+   
+          <tr>
+            <td colspan="2"><%=f.submit '注册',class:'btn-reg'%><div class="reg_tips"><span id='msg_sign_up'></span></div></td>
           </tr>
            <tr>
             <td colspan="2"><div class="disline"><span class="disline_f">or</span></div></td>
@@ -25,7 +45,7 @@
             <td colspan="2"><div class="other_login"><a href="#" class="weibo_style"></a><a href="#" class="qq_style"></a></div></td>
           </tr>
         </table>
-
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,1 +1,4 @@
-<a href="#"><img src="/front/img/adimg.jpg" alt="战地三 同名小说" class="adimg" /></a>
+<% advert = Advert.first %>
+<% if advert %>
+<a href="<%=advert.link%>"><img src="<%=advert.list_img.url%>" alt="<%=advert.name%>" class="adimg" /></a>
+<% end %>

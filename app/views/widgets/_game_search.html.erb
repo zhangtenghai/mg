@@ -1,25 +1,30 @@
 <div class="common_title clearfix">
   <h4>搜索游戏</h4>
 </div>
+<form action="/games/search" method="get" id='game_search_form'>
 <div class="search_wrap">
       <div id="search-outer">
       <div id="search">
         <div id="search-box">
-          <form action="http://www.mrgamer.com" method="GET">
-            <input type="text" name="s" id="s" value="" placeholder="请输入想要搜索的内容" class="ui-autocomplete-input" autocomplete="off">
+            <input type="text" name="game_search" id="game_search" value="" placeholder="请输入想要搜索的内容" class="ui-autocomplete-input" autocomplete="off">
             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible">No search results.</span>
-          </form>
         </div>
       </div>
     </div>
 </div>
 <div class="game_search">
+
   <div class="search_block clearfix">
     <div class="search_title">搜索条件</div>
   </div>
   <div class="search_block clearfix">
     <div class="search_type">平台</div>
-    <div class="search_option"><select><option selected>所有平台</option><option>其它</option></select></div>
+    <div class="search_option">
+    <select name="platform">
+      <option value="">所有平台</option>
+      <%=options_for_select(OPTIONS["platforms"])%>
+    </select>
+    </div>
   </div>
   <div class="search_block clearfix">
     <div class="search_type">主题</div>
@@ -27,11 +32,14 @@
   </div>
   <div class="search_block clearfix">
     <div class="search_type">最低分</div>
-    <div class="search_option"><select><option selected>无下限</option><option>其它</option></select></div>
+    <div class="search_option"><input type="input" name="min_score" /></div>
   </div>
   <div class="search_block clearfix">
     <div class="search_type">语言</div>
-    <div class="search_option"><select><option selected>所有语言</option><option>其它</option></select></div>
+    <div class="search_option"><select><option selected>所有语言</option>
+    <option>英语</option>
+    <option>日语</option>
+    </select></div>
   </div>
   <div class="search_block clearfix">
     <div class="search_type">发售日期</div>
@@ -39,3 +47,4 @@
      <div class="search_option"><select><option selected>结束日期</option><option>其它</option></select></div>
   </div>
 </div>
+</form>
