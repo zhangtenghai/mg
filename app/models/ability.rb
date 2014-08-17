@@ -12,6 +12,7 @@ class Ability
         can :edit, :news_menu
         can :edit, :article_menu
         can :edit, :game_menu
+        can :index, :home
     end
     # Define abilities for the passed in user here. For example:
     #
