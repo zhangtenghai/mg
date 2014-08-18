@@ -1,6 +1,6 @@
 CKEDITOR.editorConfig = function(config) {
-  config.defaultLanguage = 'zh_CN';
-  config.language = 'zh_CN';
+  config.defaultLanguage = 'zh-cn';
+  config.language = 'zh-cn';
   config.enterMode = CKEDITOR.ENTER_BR;
   config.shiftEnterMode = CKEDITOR.ENTER_P;
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
