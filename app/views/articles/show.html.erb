@@ -11,32 +11,34 @@
     <div class="row"> 
       <!-- content article and score -->
       <div class="exarticle_container">
-        <div class="exarticle_pic"><img src="/front/img/review-content.jpg" alt=""></div>
+        <div class="exarticle_pic">
+          <%=raw @article.content%>
+        </div>
         <div class="exarticle_score">
           <div class="score">
-                  <div class="mg-score">8</div>
-                  <div class="avg-score">8.5</div>
+                  <div class="mg-score"><%=@article.game.score if @article.game%></div>
+                  <div class="avg-score"><%=@article.game.avg_score if @article.game%></div>
                 </div>
             <div class="right_and_wrong clearfix">
               <ul class="right_list">
-                <li>COD原班人马</li>
-                  <li>机甲和人类双对战</li>
-                  <li>游戏平衡性很高</li>
-                </ul>
-                <ul class="wrong_list">
-                <li>地图太大</li>
-                  <li>没有单人模式</li>
-                </ul>
+                <% @article.advantage_list.each do |tag|%>
+                  <li ><%=tag%></li>
+                <% end %>
+              </ul>
+              <ul class="wrong_list">
+                <% @article.disadvantage_list.each do |tag|%>
+                  <li ><%=tag%> </li>
+                <% end %>
+              </ul>
             </div>
           <div class="author_info">
               <div class="author_wrap">
-                  <div class="author_pic"><a href="#"><!-- <img src="img/jp_head.jpg" alt="Bobby Kotick"> --></a></div>
-                    <div class="sns_btn"><a href="javascript:;" class="share" title="分享">share</a></div>
+                  <div class="author_pic"><a href="#"><img src="<%=@article.user.avatar.url%>" alt="<%=@article.user.pet_name%>"></a></div>
+                    <div class="sns_btn"><!-- <a href="javascript:;" class="share" title="分享">share</a> --></div>
                     <div class="author_name"><a href="#">基王</a></div>
                 </div>
                 <div class="author_intro">
-                  <p>游戏的水准其实只在中上，游戏的水准其实只在中上，游戏的水准其实只在中上，游戏的水准其实只在中上，游戏的水准其实只在中上，游戏的水准其实只在中上，游戏的水准其实只在中上，游戏的水准其实只在中上，游戏的水准其实只在中上。</p>
-          <p>游戏的水准其实只在中上，游戏的水准其实只在中上。</p>
+                  <%=@article.quote %>
                 </div>
           </div>
         </div>

@@ -42,5 +42,9 @@ jQuery(document).ready(function() {
     return e.preventDefault();
   });
 
+  $('.tag_select').select2({
+        tags:[],
+        allowClear: true
+  });
 });
 

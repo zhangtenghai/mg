@@ -60,6 +60,6 @@ class Admin::ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title,:topic,:head_img,:avatar, :summary, :user_id, :category, :content, :posted_at, :quote, :game_id)
+      params.require(:article).permit(:title,:topic,:head_img,:advantage_list,:disadvantage_list,:avatar, :summary, :user_id, :category, :content, :posted_at, :quote, :game_id)
     end
 end

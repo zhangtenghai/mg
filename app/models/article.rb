@@ -2,6 +2,8 @@ class Article < ActiveRecord::Base
   include Disable
   include Searchable
 
+  acts_as_taggable_on :advantage
+  acts_as_taggable_on :disadvantage
   belongs_to :user
   belongs_to :game
   has_many :comments
