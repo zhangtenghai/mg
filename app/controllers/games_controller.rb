@@ -24,6 +24,13 @@ class GamesController < ApplicationController
     if !params[:platform].blank?
       @game_results = @game_results.tagged_with(params[:platform], :on => :platform, :any => true)
     end
+    if !params[:start_at].blank?
+      @game_results = @game_results.where("sale_date >= ? ",params[:start_at])
+    end
+    if !params[:end_at].blank?
+      @game_results = @game_results.where("sale_date <= ? ",params[:end_at])
+    end
+
     @game_results = @game_results.page(params[:page]).per(20)
     @game_sales = Game.get_current_year_not_sale_games.limit(7)
   end

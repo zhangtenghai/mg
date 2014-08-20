@@ -6,7 +6,7 @@
       <div id="search-outer">
       <div id="search">
         <div id="search-box">
-            <input type="text" name="game_search" id="game_search" value="" placeholder="请输入想要搜索的内容" class="ui-autocomplete-input" autocomplete="off">
+            <input type="text" name="game_search" id="game_search" value="<%=params[:game_search]%>" placeholder="请输入想要搜索的内容" class="ui-autocomplete-input" autocomplete="off">
             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible">No search results.</span>
         </div>
       </div>
@@ -20,9 +20,9 @@
   <div class="search_block clearfix">
     <div class="search_type">平台</div>
     <div class="search_option">
-    <select name="platform">
+    <select name="platform" >
       <option value="">所有平台</option>
-      <%=options_for_select(OPTIONS["platforms"])%>
+      <%=options_for_select(OPTIONS["platforms"],params[:platform])%>
     </select>
     </div>
   </div>
@@ -32,7 +32,7 @@
   </div>
   <div class="search_block clearfix">
     <div class="search_type">最低分</div>
-    <div class="search_option"><input type="input" name="min_score" /></div>
+    <div class="search_option"><input type="input" name="min_score" value="<%=params[:min_score]%>" /></div>
   </div>
   <div class="search_block clearfix">
     <div class="search_type">语言</div>
@@ -43,8 +43,8 @@
   </div>
   <div class="search_block clearfix">
     <div class="search_type">发售日期</div>
-    <div class="search_option"><select><option selected>起始日期</option><option>其它</option></select></div>
-     <div class="search_option"><select><option selected>结束日期</option><option>其它</option></select></div>
+    <div class="search_option"><input type="input" class="datepicker" name="start_at" value="<%=params[:start_at]%>"  placeholder='起始日期'></div>
+     <div class="search_option"><input type="input" class="datepicker" name="end_at" value="<%=params[:end_at]%>" placeholder='结束日期'></div>
   </div>
 </div>
 </form>
