@@ -163,7 +163,7 @@ body #error-404 h2 { text-transform: uppercase; font-size: 70px; font-family: 'O
 #boxed .cart-menu { border-radius: 2px 0px 0px 2px!important; padding-bottom: 22px!important; padding-top: 22px!important; padding-left: 11px!important; padding-right: 10px!important; box-shadow: 0px 0px 6px rgba(0,0,0,0.15); }
 
 /*-------------------------------------------------------------------------*/
-/*	1.	Header + Search + bigNav Styles
+/*  1.  Header + Search + bigNav Styles
 /*-------------------------------------------------------------------------*/
 #header-outer { width: 100%; top: 0px; left: 0px; position: fixed; overflow: visible!important; z-index: 7000;}
 #header-outer .alltips{height:39px; vertical-align:middle; margin:0 auto;}
@@ -265,7 +265,7 @@ div#header-outer.active .user-info .user-tipnum{ position:relative;top:0;}
 div#header-outer.active .user-info .user-dropbox {top:40px;}
 div#header-outer.active .user-login {margin-top:15px;}
 /*-------------------------------------------------------------------------*/
-/*	2.	Main Content
+/*  2.  Main Content
 /*-------------------------------------------------------------------------*/
 
 .container-wrap .carousel_text{position:absolute;left:15px;bottom:30px; width:100%;text-align:center;}
@@ -319,7 +319,7 @@ div#header-outer.active .user-login {margin-top:15px;}
 body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 
 /*-------------------------------------------------------------------------*/
-/*	3.	Main container
+/*  3.  Main container
 /*-------------------------------------------------------------------------*/ 
 
 
@@ -327,10 +327,10 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_container img{ width:100%; display:block;}
 .layout_single{padding-right:0;padding-left:290px;}
 .main_container .container_banner{float:left;width:100%}
-.main_container .container_article{float:left;padding-bottom:24px;padding-right:24px;}
+.main_container .container_article{float:left;width:100%;padding-bottom:24px;padding-right:24px;}
 .main_container .singlegame_article,.main_container .exarticle_article{padding-bottom:24px;padding-right:24px;}
 .main_container .container_article_wrap{ padding:0 10px}
-.main_container .container_article .article_p{ font-size:14px;color:#2a2a2a; text-indent:2em; padding-bottom:15px;}
+.main_container .container_article .article_p{ font-size:14px;color:#2a2a2a; padding-bottom:15px;}
 .main_container .container_article .article_mg{ font-size:18px;color:#000; font-weight:bold; padding:40px 0 25px 0;border-bottom:21px solid #ee9e00;}
 .main_container .container_article .article_mg .quotes{ font-size:36px;color:#e79c09; font-family:Arial;position:relative;top:5px;padding-right:5px;}
 .main_container .container_article .article_video{ padding-bottom:15px;}
@@ -465,7 +465,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_container .load_tip a:hover{ color:#ee9e00;}
 
 /*-------------------------------------------------------------------------*/
-/*	4.	Main aside
+/*  4.  Main aside
 /*-------------------------------------------------------------------------*/
 
 .main_aside{ width:266px;float:right;margin-top:45px;}
@@ -538,7 +538,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_aside .sales_game{width:175px;float:right;margin-top:14px;}
 .main_aside .sales_game dt{line-height:24px;color:#000;font-weight:bold;padding:2px;font-size:15px;font-family: hkljh,"microsoft yahei","Arial"!important;}
 .main_aside .sales_game dt a{color:#000;}
-.main_aside .sales_game dd{width:36px;height:18px;margin-right:5px;float:left; background-color:#56aaff; border-radius:10px; font:bold 11px/18px "microsoft yahei";padding:0; text-align:center;color:#fff;cursor:pointer;}
+.main_aside .sales_game dd{padding:0 5px;height:18px;margin-right:5px;float:left; background-color:#56aaff; border-radius:10px; font:bold 11px/18px "microsoft yahei";text-align:center;color:#fff;cursor:pointer;}
 .main_aside .sales_game dd.style2{background-color:#01cb48; }
 .main_aside .sales_game dd.style3{background-color:#ee9e00; }
 .main_aside .sales_game dd.style4{background-color:#e40000; }
@@ -615,7 +615,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_aside .industry_wrap .bubble a:hover{color:#ee9e00;text-decoration:underline;}
 
 /*-------------------------------------------------------------------------*/
-/*	5. Footer Styles
+/*  5. Footer Styles
 /*-------------------------------------------------------------------------*/
 
 #footer-outer{background:#101010 repeat-x url(../images/footer-bg.png) 0 0;}
@@ -637,7 +637,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 
 
 /*-------------------------------------------------------------------------*/
-/*	6.	General Form Styles
+/*  6.  General Form Styles
 /*-------------------------------------------------------------------------*/
 
 input[type=text], textarea, input[type=email], input[type=password], input[type=tel] { padding: 10px!important; width: 100%; border: 0px; border-bottom: 1px solid #fff; font-family: 'OpenSansRegular'; font-size: 12px; line-height: 22px; color: #555; background-color: #ebebeb; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset; -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset; -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset; -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset; transition: all 0.2s linear; -moz-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; -o-transition: all 0.2s linear; }
@@ -649,10 +649,10 @@ textarea { max-width: 100%; }
 label span { color: #27CFC3; }
 
 /*-------------------------------------------------------------------------*/
-/*	7.	popup
+/*  7.  popup
 /*-------------------------------------------------------------------------*/
 
-.popbox{ width:484px;height:294px; background:#f4f4f4 no-repeat url(../images/sidebar-whitebg.jpg);box-shadow: 0 0 6px #888;border-radius:2px;overflow:hidden;}
+.popbox{ width:484px;height:324px; background:#f4f4f4 no-repeat url(../images/sidebar-whitebg.jpg);box-shadow: 0 0 6px #888;border-radius:2px;overflow:hidden;}
 .popbox  h4{ filter:none;*color:#666;color:#666\0;}
 .popbox .aside_more{padding-right:8px;}
 .popbox .reg_tab{margin: 0 0;}
