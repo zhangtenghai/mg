@@ -9,7 +9,7 @@
       </div>
       <div class="news_detail">
         <h3><a href="#"><%=raw raw_title(article.title)%></a></h3>
-        <div class="ralative_tags"> <span><a href="#"><%=article.game.name if article.game%></a></span> <span><%=(article.game.sale_date.strftime('%y年%m月%d日')+"发售") if article.game && article.game.sale_date%></span> <span><a href="#">by <%=article.user.pet_name if article.user%></a></span> </div>
+        <div class="ralative_tags"> <span><a href="/games/<%=article.game.id if article.game%>"><%=article.game.name if article.game%></a></span> <span><%=(article.game.sale_date.strftime('%y年%m月%d日')+"发售") if article.game && article.game.sale_date%></span> <span><a href="#">by <%=article.user.pet_name if article.user%></a></span> </div>
         <div class="detail_text"><%=article.summary%></div>
       </div>
       <div class="comment_num"><%=article.comments.length%></div><a href="/articles/<%=article.id%>" class="container_mask"></a>

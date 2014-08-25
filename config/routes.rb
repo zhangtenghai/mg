@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => {sessions: 'sessions',registrations: 'registrations'}
 
-  
+  resources :users, :only => [:show]
   namespace :admin do
     resources :articles do
       collection do
