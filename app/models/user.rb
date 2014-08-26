@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "160x160>", :thumb => "45x45>" }, :default_url => "/front/img/default/user_avatar_default.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+  def remember_me
+    true
+  end
+
   def set_role
     if self.role.blank?
       self.role = '普通用户'
