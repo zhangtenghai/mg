@@ -1,4 +1,4 @@
-<div class="container-wrap" style="background:no-repeat url(<%=@topic.head_img.url(:medium) if @topic%>) 50% 0;background-size:cover;">
+<div class="container-wrap" style="background:no-repeat url(<%=@topic.head_img.url if @topic%>) 50% 0;background-size:cover;">
   <div class="container" style="height:648px">
     <div class="carousel_text">
       <h2><a href="/games/<%=@topic.game.id if @topic && @topic.game%>"><%=@topic.game.name if @topic && @topic.game%></a></h2>
@@ -46,7 +46,7 @@
                   </div>
                   <div class="news_title"><%=game.name%></div>
                   <a href="/games/<%=game.id%>" class="container_mask"></a>
-                  <div class="container_pic"><img src="<%=game.list_img.url(:medium)%>" alt="" /></div>
+                  <div class="container_pic"><img src="<%=game.list_img.url%>" alt="" /></div>
                 </div>
               </div>
           <% end %>
