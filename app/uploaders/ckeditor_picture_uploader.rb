@@ -9,8 +9,8 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   storage :qiniu
-  self.qiniu_bucket = "mgramersources"
-  self.qiniu_bucket_domain = "mgramersources.qiniudn.com"
+  self.qiniu_bucket = "mrgamersources"
+  self.qiniu_bucket_domain = "mrgamersources.qiniudn.com"
   self.qiniu_protocal = 'http'
   self.qiniu_can_overwrite = true
   self.qiniu_bucket_private= false #default is false
