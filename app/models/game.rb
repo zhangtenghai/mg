@@ -16,14 +16,17 @@ class Game < ActiveRecord::Base
   validates_uniqueness_of :name
   accepts_nested_attributes_for :comments
 
-  has_attached_file :head_img, :styles => { :medium => "1600x648>" }
-  validates_attachment_content_type :head_img, :content_type => /\Aimage\/.*\Z/
+  mount_uploader :head_img, ImageUploader
+  mount_uploader :avatar, ImageUploader
+  mount_uploader :list_img, ImageUploader
+  # has_attached_file :head_img, :styles => { :medium => "1600x648>" }
+  # validates_attachment_content_type :head_img, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :avatar, :styles => { :medium => "160x160>" }, :default_url => "/front/img/default/game_avatar_default.jpg"
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  # has_attached_file :avatar, :styles => { :medium => "160x160>" }, :default_url => "/front/img/default/game_avatar_default.jpg"
+  # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :list_img, :styles => { :medium => "311x200>" }
-  validates_attachment_content_type :list_img, :content_type => /\Aimage\/.*\Z/
+  # has_attached_file :list_img, :styles => { :medium => "311x200>" }
+  # validates_attachment_content_type :list_img, :content_type => /\Aimage\/.*\Z/
 
   scope :get_current_year_not_sale_games, -> {where("date_format(sale_date,'%Y')=date_format(now(),'%Y') and sale_date>=now()").order("sale_date")}
   default_scope { enabled }

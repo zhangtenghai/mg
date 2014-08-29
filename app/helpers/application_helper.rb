@@ -66,7 +66,11 @@ module ApplicationHelper
   end
 
   def image_hover(name,url)
-    link_to(name,'javascript:;',class: 'popovers',data: {trigger: 'hover',html: 'true', content: "<img src='"+url+"' style='height:150px; width:250px;'/>", "original-title"=> "图片" } )
+    if url
+      link_to(name,'javascript:;',class: 'popovers',data: {trigger: 'hover',html: 'true', content: "<img src='"+url+"' style='height:150px; width:250px;'/>", "original-title"=> "图片" } )
+    else
+      name
+    end
   end
   
   def raw_title(title)

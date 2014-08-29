@@ -11,11 +11,13 @@ class News < ActiveRecord::Base
 
   validates_presence_of :title, :content
 
-  has_attached_file :head_img, :styles => {  :thumb => "1600x648>" }
-  validates_attachment_content_type :head_img, :content_type => /\Aimage\/.*\Z/
+  mount_uploader :head_img, ImageUploader
+  mount_uploader :list_img, ImageUploader
+  # has_attached_file :head_img, :styles => {  :thumb => "1600x648>" }
+  # validates_attachment_content_type :head_img, :content_type => /\Aimage\/.*\Z/
 
-  has_attached_file :list_img, :styles => {  :thumb => "311x200>" }
-  validates_attachment_content_type :list_img, :content_type => /\Aimage\/.*\Z/
+  # has_attached_file :list_img, :styles => {  :thumb => "311x200>" }
+  # validates_attachment_content_type :list_img, :content_type => /\Aimage\/.*\Z/
   default_scope { enabled.order('id desc') }
   
   paginates_per 10

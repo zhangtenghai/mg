@@ -6,9 +6,15 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
-
+  storage :qiniu
+  self.qiniu_bucket = "mgramersources"
+  self.qiniu_bucket_domain = "mgramersources.qiniudn.com"
+  self.qiniu_protocal = 'http'
+  self.qiniu_can_overwrite = true
+  self.qiniu_bucket_private= false 
+  
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

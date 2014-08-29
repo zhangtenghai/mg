@@ -11,17 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817051217) do
+ActiveRecord::Schema.define(version: 20140828074141) do
 
   create_table "adverts", force: true do |t|
     t.string   "name"
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "list_img_file_name"
-    t.string   "list_img_content_type"
-    t.integer  "list_img_file_size"
-    t.datetime "list_img_updated_at"
+    t.string   "list_img"
   end
 
   create_table "articles", force: true do |t|
@@ -34,17 +31,11 @@ ActiveRecord::Schema.define(version: 20140817051217) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "disabled_at"
-    t.string   "head_img_file_name"
-    t.string   "head_img_content_type"
-    t.integer  "head_img_file_size"
-    t.datetime "head_img_updated_at"
     t.string   "category"
     t.string   "topic"
-    t.string   "summary",               limit: 500
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "summary",     limit: 500
+    t.string   "avatar"
+    t.string   "head_img"
   end
 
   create_table "articles_user_favorites", force: true do |t|
@@ -96,28 +87,19 @@ ActiveRecord::Schema.define(version: 20140817051217) do
     t.string   "developer"
     t.string   "website"
     t.string   "publisher"
-    t.decimal  "sale_price",                        precision: 10, scale: 0
+    t.decimal  "sale_price",              precision: 10, scale: 0
     t.string   "rating"
-    t.decimal  "avg_score",                         precision: 10, scale: 0
+    t.decimal  "avg_score",               precision: 10, scale: 0
     t.datetime "sale_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "disabled_at"
-    t.string   "head_img_file_name"
-    t.string   "head_img_content_type"
-    t.integer  "head_img_file_size"
-    t.datetime "head_img_updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "list_img_file_name"
-    t.string   "list_img_content_type"
-    t.integer  "list_img_file_size"
-    t.datetime "list_img_updated_at"
-    t.decimal  "score",                             precision: 10, scale: 0
-    t.string   "summary",               limit: 500
+    t.decimal  "score",                   precision: 10, scale: 0
+    t.string   "summary",     limit: 500
     t.string   "sale_unit"
+    t.string   "avatar"
+    t.string   "head_img"
+    t.string   "list_img"
   end
 
   create_table "games_user_favorites", force: true do |t|
@@ -142,16 +124,10 @@ ActiveRecord::Schema.define(version: 20140817051217) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "disabled_at"
-    t.string   "head_img_file_name"
-    t.string   "head_img_content_type"
-    t.integer  "head_img_file_size"
-    t.datetime "head_img_updated_at"
     t.boolean  "is_head"
-    t.string   "list_img_file_name"
-    t.string   "list_img_content_type"
-    t.integer  "list_img_file_size"
-    t.datetime "list_img_updated_at"
-    t.string   "summary",               limit: 500
+    t.string   "summary",     limit: 500
+    t.string   "list_img"
+    t.string   "head_img"
   end
 
   create_table "news_user_favorites", force: true do |t|
@@ -199,14 +175,11 @@ ActiveRecord::Schema.define(version: 20140817051217) do
     t.datetime "locked_at"
     t.string   "unlock_token"
     t.datetime "disabled_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "pet_name"
     t.string   "weibo"
     t.string   "qq"
     t.string   "signature"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -219,10 +192,7 @@ ActiveRecord::Schema.define(version: 20140817051217) do
     t.datetime "disabled_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "avatar"
   end
 
 end
