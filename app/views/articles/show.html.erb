@@ -11,9 +11,7 @@
     <div class="row"> 
       <!-- content article and score -->
       <div class="exarticle_container">
-        <div class="exarticle_pic">
-          <%=raw @article.content%>
-        </div>
+        <%=raw @article.content%>
         <div class="exarticle_score">
           <div class="score">
                   <div class="mg-score"><%=@article.game.score if @article.game%></div>
