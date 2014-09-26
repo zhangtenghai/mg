@@ -329,7 +329,8 @@ $('#to-top').click(function(){
         $(this).find('.vote-star-in').stop().animate({width:$span+'%'},100);    
      if($span==100){  
              $('#vote-num').text('满星')  ;   
-         }            
+         }
+         $('#star').val($span/20)        
     });    
   //新闻栏目页 data-tab
    $('.date_tab').delegate('td','click',function(){       
