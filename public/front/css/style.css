@@ -579,7 +579,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_aside .game_info .game_name a:hover{color:#ee9e00;}
 .main_aside .game_info .game_sdate{ font-size:12px;color:#afafaf;text-align:center;text-shadow:0 1px 2px black;}
 .main_aside .game_system { margin:0 0;text-align:center;}
-.main_aside .game_system li{width:36px;height:18px;margin:0 5px; display:inline-block;background-color:#56aaff; border-radius:10px; font:bold 11px/18px "microsoft yahei";padding:0; text-align:center;color:#fff;cursor:pointer; list-style:none;}
+.main_aside .game_system li{height:18px;margin:0 5px; display:inline-block;background-color:#56aaff; border-radius:10px; font:bold 11px/18px "microsoft yahei";padding:0 5px; text-align:center;color:#fff;cursor:pointer; list-style:none;}
 .main_aside .game_system li.style2{background-color:#01cb48; }
 .main_aside .game_system li.style3{background-color:#ee9e00; }
 .main_aside .game_system li.style4{background-color:#e40000; }
