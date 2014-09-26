@@ -29,10 +29,15 @@
 	.main_container .hotnews_text p{font-size:12px; line-height:18px;}
 	
 	.main_container .container_comment{margin-top:18px;}
+	.exarticle_container .author_intro{display:none;}
+	.exarticle_container .normal_text .normal_text_h{ font-size:16px;margin-top:19px;margin-bottom:11px; font-weight:bold;}
+	.exarticle_container .normal_text .normal_text_p{ height:150px;}
+	.exarticle_container .text_mode5 .normal_text .normal_text_p p{margin:0 5px!important;padding:8px!important;}
 	
 	#footer-outer .footer-p .footer-logo{display:none;}
 	#footer-outer .footer-p span{display:block; text-align:center;}
 	#footer-outer .footer-link a{ background:none; padding-left:15px!important;padding-bottom:10px;margin-right:15px;}
+	
 	
 	
 }
@@ -145,6 +150,10 @@
 	.main_aside .private_ul li a{ font-size:14px;}
 	.main_container .private_detail th{ width:32%; font-size:14px;}
 	.main_container .private_detail td{ font-size:12px;}
+	.exarticle_container .author_info{display:none;}
+	.exarticle_container .normal_text .normal_text_h{ font-size:16px;margin-top:19px;margin-bottom:11px; font-weight:bold;}
+	.exarticle_container .normal_text .normal_text_p{ height:120px;}
+	.exarticle_container .text_mode5 .normal_text .normal_text_p p{margin:0 5px!important;padding:2px!important;}
 	
 	#footer-outer .footer-p .footer-logo{display:none;}
 	#footer-outer .footer-p span{display:block; text-align:center; line-height:16px; padding-top:10px}
@@ -204,6 +213,10 @@ and (max-width : 690px) {
 	.main_aside .private_ul li a{ font-size:14px;}
 	.main_container .private_detail th{ width:32%; font-size:14px;}
 	.main_container .private_detail td{ font-size:12px;}
+	.exarticle_container .author_info{display:none;}
+	.exarticle_container .normal_text .normal_text_h{ font-size:16px;margin-top:19px;margin-bottom:11px; font-weight:bold;}
+	.exarticle_container .normal_text .normal_text_p{ height:120px;}
+	.exarticle_container .text_mode5 .normal_text .normal_text_p p{margin:0 5px!important;padding:2px!important;}
 	
 	#footer-outer .footer-p .footer-logo{display:none;}
 	#footer-outer .footer-p span{display:block; text-align:center; line-height:16px; padding-top:10px}

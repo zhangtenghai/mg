@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   scope :editors, -> {where("role in ('管理员','编辑')")}
   paginates_per 10
   before_create :set_role
-  mount_uploader :avatar, ImageUploader
+  mount_uploader :avatar, UserUploader
   # has_attached_file :avatar, :styles => { :medium => "160x160>", :thumb => "45x45>" }, :default_url => "/front/img/default/user_avatar_default.jpg"
   # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 

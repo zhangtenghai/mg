@@ -16,7 +16,7 @@
   <div class="game_comment">
     <% game.comments.each do |f|%>
       <div class="comment_block">
-      <div class="user_head"><a href="#"><img src="<%=f.user.avatar.url(:thumb)%>" alt="<%=f.user.pet_name%>" /></a></div>
+      <div class="user_head"><a href="#"><img src="<%=f.user.avatar.url%>" alt="<%=f.user.pet_name%>" /></a></div>
       <div class="comment_text"><%=f.content %><a href="#" class="user-name">by <%=f.user.pet_name%></a></div>
       </div>
     <% end %>

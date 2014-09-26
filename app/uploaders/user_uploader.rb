@@ -1,4 +1,4 @@
-class ImageUploader < CarrierWave::Uploader::Base
+class UserUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
 
@@ -18,4 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     Ckeditor.image_file_types
   end
 
+  def default_url
+    "/images/fallback/" + [version_name, "user_head.jpg"].compact.join('_')
+  end
 end

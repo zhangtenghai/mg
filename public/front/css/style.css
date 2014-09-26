@@ -291,7 +291,26 @@ div#header-outer.active .user-login {margin-top:15px;}
 .container-wrap .industry_wrap_hd .arr_in{ border-bottom: 9px solid #fff;border-right: 15px solid transparent;height:0; width:0; font-size:0;position:absolute;top:-8px; left:24px; overflow:hidden; z-index:101;}
 
 .exarticle_container{ padding-top:0;}
-.exarticle_container .exarticle_pic img{display:block;}
+.exarticle_container .exarticle_block{position:relative;}
+.exarticle_container .exarticle_block .normal_text{ position:absolute;}
+.exarticle_container .exarticle_pic { position:absolute;}
+.exarticle_container .exarticle_pic img{display:block;margin-top:15px;}
+
+.exarticle_container .normal_text{ background:no-repeat url(../images/exarticle_bg.png);height:90%;overflow:hidden;}
+.exarticle_container .normal_text .normal_text_h{ font-size:24px;margin-top:29px;margin-bottom:11px; font-weight:bold; text-align:right;padding-right:20px;padding-top:10px;}
+.exarticle_container .normal_text .normal_text_p{ height:90%;padding:10px 20px 0 40px;}
+.exarticle_container .text_mode1 .normal_text {position:absolute;width:43%;left:10px;top:10px;}
+.exarticle_container .text_mode1 .exarticle_pic {position:absolute;width:33%;right:27px;top:14px;}
+.exarticle_container .text_mode2 .normal_text {position:absolute;width:43%;right:27px;top:14px;}
+.exarticle_container .text_mode2 .exarticle_pic {position:absolute;width:33%;left:27px;top:10px;}
+.exarticle_container .text_mode3 .normal_text {position:absolute;width:43%;left:27px;top:14px;}
+.exarticle_container .text_mode3 .normal_text .normal_text_p{padding-top:70px;}
+.exarticle_container .text_mode4 .normal_text {position:absolute;width:43%;right:27px;top:14px}
+.exarticle_container .text_mode4 .normal_text .normal_text_p{padding-top:70px;}
+.exarticle_container .text_mode5 .normal_text {position:absolute; left:27px;top:14px; background:none;}
+.exarticle_container .text_mode5 .normal_text .normal_text_p p{ background-color:#ccc;}
+.exarticle_container .text_mode5 .normal_text .normal_text_p p{width:20%;margin:0 25px!important;padding:16px!important;float:left;}
+
 .exarticle_container .exarticle_score{ height:151px; background:#313131 no-repeat url(../images/../images/review-content-footer.png) 100% 100%; position:relative;overflow:hidden;}
 .exarticle_container .author_info{ padding:10px;}
 .exarticle_container .author_info .author_wrap{width:126px;float:left; position:relative;}
