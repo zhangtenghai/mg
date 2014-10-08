@@ -4036,7 +4036,7 @@ Responsive Flip Scroll Tables
 
 .flip-scroll table { width: 100%; }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 980px) {
   
   .flip-scroll .flip-content:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
   .flip-scroll * html .flip-content { zoom: 1; }
