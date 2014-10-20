@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :games
     resources :comments
     resources :voices
+    resources :descriptions, :except => [:create,:new,:destroy]
     resources :users do
       collection do
         get "change_password"
@@ -58,7 +59,16 @@ Rails.application.routes.draw do
       get "voices"
     end
   end
-
+  resources :descriptions, only:[:show] do
+    collection do
+      get "team"
+      get "suggestion"
+      get "submission"
+      get "term"
+      get "disclaimer"
+      get "cooperation"
+    end
+  end
   resources :search, only: [:index]
   root 'home#index'
   get "home/index"

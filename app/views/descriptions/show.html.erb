@@ -1,0 +1,30 @@
+<!--content-->
+<div class="container-wrap" style="background:no-repeat url(<%=Article.first.head_img.url%>) 50% 0;background-size:cover;">
+  <div class="container" style="height:648px">
+    <div class="carousel_text">
+      <h2><%=@description.title%></h2>
+      
+    </div>
+  </div>
+</div>
+<div class="container-wrap">
+  <div class="container main-content">
+    <div class="row"> 
+      <!-- 右边栏-->
+     
+      <!-- //右边栏--> 
+      <!-- 左内容-->
+      <div class="main_container clearfix">
+        <div class="container_article">
+          <div class="container_article_wrap">
+            <div class="article_p"><%=raw @description.content%></div>
+            
+            
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!-- //左内容--> 
+    </div>
+  </div>
+</div>
+<!--//content--> 

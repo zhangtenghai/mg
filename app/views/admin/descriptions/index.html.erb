@@ -1,0 +1,38 @@
+<% content_for :page_title do %>
+<%= render "title_bar" %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box">
+      <div class="dataTables_wrapper form-inline" role="grid">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>类别</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @descriptions.each do |f| %>
+                <tr>
+                  <td><%=f.title %></td>
+                  <td>
+                    <%= link_to '编辑', edit_admin_description_path(f) %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= paginate @descriptions, :theme => "admin" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

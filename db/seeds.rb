@@ -5,5 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-u = User.new(:email => "admin@mg.com", :password => '12345678', :password_confirmation => '12345678',:name=>"admin",:role =>"管理员")
-u.save
+# u = User.new(:email => "admin@mg.com", :password => '12345678', :password_confirmation => '12345678',:name=>"admin",:role =>"管理员")
+# u.save
+Description.create!(title:'编辑团队',content:'')
+Description.create!(title:'建议和BUG汇报',content:'')
+Description.create!(title:'投稿须知',content:'')
+Description.create!(title:'法律条款',content:'')
+Description.create!(title:'免责声明',content:'')
+Description.create!(title:'合作洽谈',content:'')
