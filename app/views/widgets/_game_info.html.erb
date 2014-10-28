@@ -13,8 +13,12 @@
     <div class="game_name"><a href="/games/<%=game.id%>"><%=game.name%></a></div>
     <div class="game_sdate"><%=game.sale_date.nil? ? '发售日未知' : game.sale_date.strftime('%y年%m月%d日')+'发售'%></div>
     <ul class="game_system">
+      <% a = (0..3).to_a %>
       <% game.tags.limit(4).each_with_index do |tag,index|%>
-        <li class="style<%=index+1%>"><%=tag.name%>
+      <% num = a.sample
+         a.delete(num)
+      %>
+        <li class="style<%=num+1%>"><%=tag.name%>
         </dd>
       <% end %>
     </ul>

@@ -8,12 +8,12 @@
         <%=render "widgets/like",remote_url: "/ajax/user_favorites/article/#{article.id}",obj:article %>
       </div>
       <div class="news_detail">
-        <h3><a href="#"><%=raw raw_title(article.title)%></a></h3>
-        <div class="ralative_tags"> <span><a href="/games/<%=article.game.id if article.game%>"><%=article.game.name if article.game%></a></span> <span><%=(article.game.sale_date.strftime('%y年%m月%d日')+"发售") if article.game && article.game.sale_date%></span> <span><a href="#">by <%=article.user.pet_name if article.user%></a></span> </div>
+        <h3><a href="/articles/<%=article.id%>"><%=raw raw_title(article.title)%></a></h3>
+        <div class="ralative_tags"> <span><a href="/games/<%=article.game.id if article.game%>"><%=article.game.name if article.game%></a></span> <span><%=(article.game.sale_date.strftime('%y年%m月%d日')+"发售") if article.game && article.game.sale_date%></span> <span><a href="/users/<%=article.user.pet_name%>">by <%=article.user.pet_name if article.user%></a></span> </div>
         <div class="detail_text"><%=article.summary%></div>
       </div>
       <div class="comment_num"><%=article.comments.length%></div><a href="/articles/<%=article.id%>" class="container_mask"></a>
-      <div class="container_pic"><a href="#"><img src="<%=article.avatar.url%>" alt="" /></a></div>
+      <div class="container_pic"><a href="/users/<%=article.user.pet_name%>"><img src="<%=article.avatar.url%>" alt="" /></a></div>
     </div>
   </div>
 </div>

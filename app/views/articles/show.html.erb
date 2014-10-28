@@ -31,9 +31,9 @@
             </div>
           <div class="author_info">
               <div class="author_wrap">
-                  <div class="author_pic"><a href="#"><img src="<%=@article.user.avatar.url%>" alt="<%=@article.user.pet_name%>"></a></div>
+                  <div class="author_pic"><a href="/users/<%=@article.user.pet_name%>"><img src="<%=@article.user.avatar.url%>" alt="<%=@article.user.pet_name%>"></a></div>
                     <div class="sns_btn"><!-- <a href="javascript:;" class="share" title="分享">share</a> --></div>
-                    <div class="author_name"><a href="#">基王</a></div>
+                    <div class="author_name"><a href="/users/<%=@article.user.pet_name%>"><%=@article.user.pet_name%></a></div>
                 </div>
                 <div class="author_intro">
                   <%=@article.quote %>
