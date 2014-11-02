@@ -69,7 +69,7 @@ body, button, input, select, textarea { font:12px/1.125 "microsoft yahei",Tahoma
 /*global*/
 
 body { font-size: 12px; -webkit-font-smoothing: antialiased; font-family:  "Microsoft YaHei"，'OpenSansRegular'; background-color: #1F1F1F; line-height: 22px; }
-body {background:#f5f5f5 repeat url(../images/news-list-bg.png)}
+body {overflow-x: hidden; background:#f5f5f5 repeat url(../images/news-list-bg.png)}
 .alignleft { float: left; margin-right: 15px; }
 .alignright { float: right; margin-left: 15px; }
 .aligncenter { display: block; margin:15px auto; }

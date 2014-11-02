@@ -291,7 +291,16 @@ $('#to-top').click(function(){
         } 
       }
    });
-     
+  
+   $('.carousel_text').delegate('a.like','click',function(e){ 
+       if (!$(this).hasClass("fancybox")){
+        if($(this).hasClass("like-active")){
+          $(this).removeClass("like-active");   
+        }else{
+          $(this).addClass("like-active");
+        } 
+      }
+   });
    
    //单个游戏页 reply
    
