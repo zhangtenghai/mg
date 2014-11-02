@@ -3,7 +3,7 @@
   <div class="container" style="height:648px">
     <div class="carousel_text">
       <h2><%=@news.title%></h2>
-      <div class="carousel_tags"><span class="article_author">作者 <%=@news.user.pet_name%></span> <span class="publish_date">发表于<%=time_words(@news.created_at)%>前</span>  <span class="sns_btn clearfix"> <a href="javascript:;" class="like like-active" title="收藏">like</a> <a href="javascript:;" class="share" title="分享">share</a> </span></div>
+      <div class="carousel_tags"><span class="article_author">作者 <%=@news.user.pet_name%></span> <span class="publish_date">发表于<%=time_words(@news.created_at)%>前</span>  <span class="sns_btn clearfix"> <%=render "widgets/like",remote_url: "/ajax/user_favorites/news/#{@news.id}",obj:@news %></span></div>
     </div>
   </div>
 </div>
