@@ -47,7 +47,16 @@ module ApplicationHelper
 
   def time_words(diff_time)
     hash=distance_of_time_in_words_hash(diff_time, Time.now ,:locale => "zh-CN")
-    return "#{hash.first[1]}#{hash.first[0]}"
+    text = ''
+    keys = hash.keys
+    keys.each do |key|
+      if hash[key] !=0
+        text = "#{hash[key]}#{key}"
+        break
+      end
+    end
+    
+    return text
   end
 
   def omission_td_before(length, *data)
