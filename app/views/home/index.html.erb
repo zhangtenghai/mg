@@ -2,7 +2,7 @@
 <div class="container-wrap" style="background:no-repeat url(<%=@topic.head_img.url if @topic%>) 50% 0;background-size:cover;">
   <div class="container" style="height:648px">
     <div class="carousel_text">
-      <h2><a href="#"><%=@topic.title if @topic%></a></h2>
+      <h2><a href="/articles/<%=@topic.id if @topic%>"><%=@topic.title if @topic%></a></h2>
       <p><%=@topic.summary if @topic%></p>
     </div>
     <!-- <div class="score">

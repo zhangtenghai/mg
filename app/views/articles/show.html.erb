@@ -12,6 +12,7 @@
       <!-- content article and score -->
       <div class="exarticle_container">
         <%=raw @article.content%>
+        <% if @article.category!='业界评论'%>
         <div class="exarticle_score">
           <div class="score">
                   <div class="mg-score"><%=@article.game.score if @article.game%></div>
@@ -40,6 +41,7 @@
                 </div>
           </div>
         </div>
+        <% end %>
       </div>
       <!-- //content article and score -->
     </div>
