@@ -10,7 +10,7 @@
         </div>
         <div class="news_title"><a href="/news/<%=head_news.id%>"><%=raw raw_title(head_news.title) %></a></div>
         <div class="comment_num"><%=head_news.comments.length%></div><a href="/news/<%=head_news.id%>" class="container_mask"></a>
-        <div class="container_pic"><img src="<%=head_news.list_img.url%>" alt="" /></div>
+        <div class="container_pic"><a href="/news/<%=head_news.id%>"><img src="<%=head_news.list_img.url%>" alt="" /></a></div>
       </div>
       <div class="hotnews_text">
         <p><%=(head_news.summary.length>300 ? head_news.summary[0,300]+"..." :  head_news.summary) if head_news.summary%></p>

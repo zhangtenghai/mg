@@ -83,7 +83,7 @@ module ApplicationHelper
   end
   
   def raw_title(title)
-    title.strip.gsub(' ','<br>')
+    title.strip.gsub('  ','<br>')
   end
 
   def resource_name

@@ -7,8 +7,12 @@
       <div class="sales_date"> <span class="month"><%=I18n.t(f.sale_date.month,scope: [:date,:month_match]) if f.sale_date%></span> <span class="day"><%=f.sale_date.day if f.sale_date%></span> </div>
       <dl class="sales_game">
         <dt><a href="/games/<%=f.id%>"><%=f.name%></a></dt>
+        <% a = (0..3).to_a %>
         <% f.tags.limit(4).each_with_index do |tag,index|%>
-          <dd class="style<%=index+1%>"><%=tag.name%></dd>
+        <% num = a.sample
+          a.delete(num)
+        %>
+          <dd class="style<%=num+1%>"><%=tag.name%></dd>
         <% end %>
       </dl>
     </div>
