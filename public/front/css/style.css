@@ -138,7 +138,7 @@ blockquote { font-family:  "Microsoft YaHei"，'OpenSansLight'; line-height: 40p
 -o-transition: all .4s ease-out;
 transition: all .4s ease-out;}
 .main-content .col.span_4 .col.span_2 img, .main-content .col.span_3 .col.span_2 img, .main-content .col.span_2 .col.span_2 img, .main-content .col.span_6 .col.span_2 img { top: -4px; }
-object, object embed { display: block; height: auto; max-width: 100%!important; }
+object, object embed { display: block;  max-width: 100%!important; }
 code { display: block; clear: both; overflow: auto; padding: 10px 20px 20px 20px; white-space: pre; background-color: #ebebeb; font: 12px "Andale Mono", Courier, "Courier New", monospace; }
 #error-404 { text-align: center; margin-bottom: 45px; }
 body #error-404 h1 { font-size: 250px!important; line-height: 250px!important; font-family: 'OpenSansbold'; }
@@ -349,7 +349,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_container .container_article{float:left;width:100%;padding-bottom:24px;padding-right:24px;}
 .main_container .singlegame_article,.main_container .exarticle_article{padding-bottom:24px;padding-right:24px;}
 .main_container .container_article_wrap{ padding:0 10px}
-.main_container .container_article .article_p{ font-size:14px;color:#2a2a2a; padding-bottom:15px;}
+.main_container .container_article .article_p{ font-size:1.375em;line-height:2;color:#2a2a2a; padding-bottom:15px;}
 .main_container .container_article .article_mg{ font-size:18px;color:#000; font-weight:bold; padding:40px 0 25px 0;border-bottom:21px solid #ee9e00;}
 .main_container .container_article .article_mg .quotes{ font-size:36px;color:#e79c09; font-family:Arial;position:relative;top:5px;padding-right:5px;}
 .main_container .container_article .article_video{ padding-bottom:15px;}
@@ -457,7 +457,7 @@ body[data-smooth-scrolling="1"] #to-top { right: 33px; }
 .main_container .container_date .week {font-size:14px;font-weight:bold; }
 .main_container .container_date .month-day {font-size:14px;}
 
-.main_container .hotnews_text{height:226px;padding:15px 25px 10px;overflow:hidden;border:1px solid #999; border-top:0 none;}
+.main_container .hotnews_text{height:225px;padding:15px 25px 10px;overflow:hidden;border:1px solid #999; border-top:0 none;}
 .main_container .hotnews_text p{color:#000;font-size:13px;line-height:24px;padding-bottom:5px;}
 .main_container .hotnews_text .writer{color:#848484;font-size:13px;}
 .main_container .hotnews_text .writer a{color:#848484}
