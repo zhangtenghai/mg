@@ -36,7 +36,4 @@ Ckeditor.setup do |config|
   # By default: nil (no limit)
   # config.assets_languages = ['en', 'uk']
   # config.assets_plugins = ['image', 'smiley']
-  
-  config.assets_languages = ['zh-cn']
-  config.assets_plugins = ['image', 'smiley']
 end

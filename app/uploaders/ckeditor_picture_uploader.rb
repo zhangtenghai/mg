@@ -8,12 +8,8 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  storage :qiniu
-  self.qiniu_bucket = "mrgamersources"
-  self.qiniu_bucket_domain = "mrgamersources.qiniudn.com"
-  self.qiniu_protocal = 'http'
-  self.qiniu_can_overwrite = true
-  self.qiniu_bucket_private= false #default is false
+  storage :file
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -39,9 +35,9 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [118, 100]
   end
 
-  # version :content do
-  #   process :resize_to_limit => [800, 980]
-  # end
+  version :content do
+    process :resize_to_limit => [800, 800]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
