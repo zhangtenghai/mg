@@ -16,8 +16,8 @@ Rails.application.routes.draw do
         get "switch"
       end
     end
-    resources :adverts
-    resources :news, :games, :voices do 
+
+    resources :news, :games, :voices, :adverts do 
       member do
         get "switch"
       end

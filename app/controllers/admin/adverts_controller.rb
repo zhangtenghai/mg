@@ -1,12 +1,13 @@
 class Admin::AdvertsController < ApplicationController
-  load_and_authorize_resource
+  include Switch
+  load_and_authorize_resource :except => [:switch]
 
   def index
-    @adverts = Advert.page(params[:page])
+    @adverts = Advert.unscoped.page(params[:page])
   end
 
   def show
-    @advert = Advert.find_by_id(params[:id])
+    @advert = Advert.unscoped.find_by_id(params[:id])
   end
 
   def new

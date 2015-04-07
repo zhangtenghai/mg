@@ -28,6 +28,7 @@
                   <td><%=f.link %></td>
                   <th><%=image_hover('背景图' ,f.list_img.url) %></th>
                   <td>
+                    <%= link_to f.status_description, switch_admin_advert_path(f) %>
                     <%= link_to '编辑', edit_admin_advert_path(f) %>
                   </td>
                 </tr>

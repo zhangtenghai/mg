@@ -16,6 +16,7 @@ class Article < ActiveRecord::Base
   scope :evaluations,-> {where(category: '评测')}
   scope :voices, -> {where(category: '业界评论')}
   scope :topics, -> {where("topic is not null")}
+  scope :no_blank, -> {where("category in ('前瞻','评测','业界评论')")}
   default_scope { enabled.order('id desc') }
 
   mount_uploader :head_img, ImageUploader
