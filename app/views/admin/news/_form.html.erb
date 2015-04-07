@@ -5,7 +5,7 @@
     <div class="form-group">
       <%= render "shared/column", name: "标题", content: f.c_text_field(:title) %>
       <% if current_user.is_admin %>
-      <%= render "shared/column", name: "作者", content: f.collection_select(:user_id,User.editors,:id,:name,{:include_blank => true,:selected => current_user.id}, {:class => 'form-control select2me'}) %>
+      <%= render "shared/column", name: "作者", content: f.collection_select(:user_id,User.editors,:id,:name,{:include_blank => true}, {:class => 'form-control select2me'}) %>
       <% end %>
      <label class="control-label col-md-1">是否头条</label>
       <div class="col-md-3">

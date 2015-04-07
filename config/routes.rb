@@ -12,12 +12,17 @@ Rails.application.routes.draw do
         get "evaluations"
         get "voices"
       end
+      member do
+        get "switch"
+      end
     end
     resources :adverts
-    resources :news
-    resources :games
+    resources :news, :games, :voices do 
+      member do
+        get "switch"
+      end
+    end
     resources :comments
-    resources :voices
     resources :descriptions, :except => [:create,:new,:destroy]
     resources :users do
       collection do

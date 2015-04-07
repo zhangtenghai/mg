@@ -47,9 +47,8 @@
                   <td><%= f.game.name if f.game %></td>
                   <td><%= f.topic %></td>
                   <td>
-                   
+                    <%= link_to f.status_description, switch_admin_article_path(f) %>
                     <%= link_to '编辑', edit_admin_article_path(f) %>
-                    <%= link_to '删除', admin_article_path(f), method: :delete, data: { confirm: '确定删除?' } %>
                   </td>
                 </tr>
               <% end %>

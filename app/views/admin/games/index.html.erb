@@ -56,8 +56,8 @@
                   <th><%=f.avg_score %></th>
                   <td><%=f.sale_date.strftime("%y-%m-%d") if f.sale_date%></td>
                   <td>
-                    <%= link_to '编辑', edit_admin_game_path(f) %> | 
-                    <%= link_to '删除', admin_game_path(f), method: :delete, data: { confirm: '确定删除?' } %>
+                    <%= link_to f.status_description, switch_admin_game_path(f) %>
+                    <%= link_to '编辑', edit_admin_game_path(f) %>
                   </td>
                 </tr>
               <% end %>

@@ -1,6 +1,6 @@
 module Disable
   extend ActiveSupport::Concern
-
+  
   included do
     scope :disabled, -> { where "disabled_at is not null" }
     scope :enabled, -> { where disabled_at: nil }
@@ -26,4 +26,7 @@ module Disable
     end
   end
 
+  def status_description
+    !self.disabled ? "禁用" : "启用"
+  end
 end

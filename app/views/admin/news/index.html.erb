@@ -43,8 +43,8 @@
                   <th><%=image_hover('缩略图' ,f.list_img.url) %></th>
                   <td><%= f.is_head ? "是" : "否" %></td>
                   <td>
+                    <%= link_to f.status_description, switch_admin_news_path(f) %>
                     <%= link_to '编辑', edit_admin_news_path(f) %>
-                    <%= link_to '删除', admin_news_path(f), method: :delete, data: { confirm: '确定删除?' } %>
                   </td>
                 </tr>
               <% end %>

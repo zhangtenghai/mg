@@ -1,4 +1,3 @@
-<% advert = Advert.first %>
-<% if advert %>
+<% Advert.each do |advert| %>
 <a href="<%=advert.link%>"><img src="<%=advert.list_img.url%>" alt="<%=advert.name%>" class="adimg" /></a>
 <% end %>

@@ -1,12 +1,13 @@
 class Admin::VoicesController < ApplicationController
-  load_and_authorize_resource :except => [:show]
+  include Switch
+  load_and_authorize_resource :except => [:switch] 
 
   def index
-    @voices = Voice.enabled.search(params[:search]).page(params[:page])
+    @voices = Voice.unscoped.search(params[:search]).page(params[:page])
   end
 
   def show
-    @voice = Voice.find_by_id(params[:id])
+    @voice = Voice.unscoped.find_by_id(params[:id])
   end
 
   def new

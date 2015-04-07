@@ -1,12 +1,13 @@
 class Admin::GamesController < ApplicationController
-  load_and_authorize_resource 
+  include Switch
+  load_and_authorize_resource :except => [:switch] 
  
   def index
-    @games = Game.enabled.search(params[:search]).page(params[:page])
+    @games = Game.unscoped.search(params[:search]).page(params[:page])
   end
 
   def show
-    @game = Game.find_by_id(params[:id])
+    @game = Game.unscoped.find_by_id(params[:id])
   end
 
   def new

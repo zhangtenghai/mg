@@ -1,20 +1,21 @@
 class Admin::ArticlesController < ApplicationController
-  load_and_authorize_resource :except => [:show]
+  include Switch
+  load_and_authorize_resource :except => [:show,:switch]
 
   def index
-    @articles = Article.enabled.search(params[:search]).page(params[:page])
+    @articles = Article.unscoped.search(params[:search]).page(params[:page])
   end
 
   def previews
-    @articles = Article.enabled.previews.search(params[:search]).page(params[:page])
+    @articles = Article.unscoped.previews.search(params[:search]).page(params[:page])
   end
 
   def evaluations
-    @articles = Article.enabled.evaluations.search(params[:search]).page(params[:page])
+    @articles = Article.unscoped.evaluations.search(params[:search]).page(params[:page])
   end
 
   def voices
-    @articles = Article.enabled.voices.search(params[:search]).page(params[:page])
+    @articles = Article.unscoped.voices.search(params[:search]).page(params[:page])
   end
 
 

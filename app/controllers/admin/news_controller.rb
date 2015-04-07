@@ -1,12 +1,13 @@
 class Admin::NewsController < ApplicationController
-  load_and_authorize_resource :except => [:show]
+  include Switch
+  load_and_authorize_resource :except => [:switch] 
 
   def index
-    @news = News.enabled.search(params[:search]).page(params[:page])
+    @news = News.unscoped.search(params[:search]).page(params[:page])
   end
 
   def show
-    @news = News.find_by_id(params[:id])
+    @news = News.unscoped.find_by_id(params[:id])
   end
 
   def new
