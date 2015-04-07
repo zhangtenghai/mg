@@ -1,3 +1,4 @@
-<% Advert.each do |advert| %>
+
+<% Advert.all.each do |advert| %>
 <a href="<%=advert.link%>"><img src="<%=advert.list_img.url%>" alt="<%=advert.name%>" class="adimg" /></a>
 <% end %>
