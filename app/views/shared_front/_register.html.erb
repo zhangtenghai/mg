@@ -10,6 +10,7 @@
   }).on('ajax:error', '#sign_up_user', function(e, data, status, xhr) {
       $("#msg_sign_up").text('请求错误')
   });
+
 </script>
   <div id="mr-regbox" style="display:none;" class="popbox">
   <div class="common_title clearfix"> <a href="#" class="aside_more">已有账号？登录<span>&gt;</span></a>
@@ -42,7 +43,7 @@
             <td colspan="2"><div class="disline"><span class="disline_f">or</span></div></td>
           </tr>
           <tr>
-            <td colspan="2"><div class="other_login"><a href="#" class="weibo_style"></a><a href="#" class="qq_style"></a></div></td>
+            <td colspan="2"><div class="other_login"><a href="#" class="weibo_style"></a><a href="#" class="qq_style" ></a></div></td>
           </tr>
         </table>
       <% end %>

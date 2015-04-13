@@ -15,6 +15,7 @@ gem 'mini_magick'
 gem 'dotiw'
 gem 'ckeditor'
 gem 'weibo_2'
+gem 'omniauth-qq'
 gem "non-stupid-digest-assets"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
