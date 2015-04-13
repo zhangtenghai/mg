@@ -1,3 +1,5 @@
+require 'omniauth/strategies/qq'
+require 'omniauth/strategies/weibo'
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -20,8 +22,8 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-config.http_authenticatable_on_xhr = false
-config.navigational_formats = ["*/*", :html, :json]
+  config.http_authenticatable_on_xhr = false
+  config.navigational_formats = ["*/*", :html, :json]
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -231,7 +233,8 @@ config.navigational_formats = ["*/*", :html, :json]
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
+  config.omniauth :qq, "101207102", "3b5abd2db3ddfcc3d33636b376288bec"
+  config.omniauth :weibo, "2667318243", "008be726d4c03e6a87910e0b7aeb7b86"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
@@ -254,4 +257,5 @@ config.navigational_formats = ["*/*", :html, :json]
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
 end
