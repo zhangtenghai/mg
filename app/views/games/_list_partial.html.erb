@@ -41,14 +41,14 @@
                     <h4>TOP<%=index+1%></h4>
                   </div>
                   <div class="sns_btn"> 
-                  <%=render "widgets/like",remote_url: "/ajax/user_favorites/game/#{game.id}",obj:game %>
-                  
+                   <%=render "widgets/like",remote_url: "/ajax/user_favorites/game/#{game.id}",obj:game %>
                   </div>
                   <div class="news_title"><%=game.name%></div>
                   <a href="/games/<%=game.id%>" class="container_mask"></a>
                   <div class="container_pic"><img src="<%=game.list_img.url%>" alt="" /></div>
                 </div>
               </div>
+            </div>
           <% end %>
         </div>
 
