@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 
   def index
     @topic = Article.get_topic_article("游戏")
-    @games =Game.last(2) #Game.get_month_hot_games
+    @games = Game.get_month_hot_games
     @game_sales = Game.get_current_year_not_sale_games.limit(7)
     @week = generate_week(Date.today,params[:page])
   end
