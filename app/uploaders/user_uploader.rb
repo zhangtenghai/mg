@@ -21,4 +21,11 @@ class UserUploader < CarrierWave::Uploader::Base
   def default_url
     "/images/fallback/" + [version_name, "user_head.jpg"].compact.join('_')
   end
+
+  process resize_to_fit: [160, 160]
+
+  version :thumb do
+    process resize_to_fill: [45,45]
+  end
+
 end

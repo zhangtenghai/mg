@@ -19,8 +19,9 @@ class User < ActiveRecord::Base
   scope :unlocked, -> { where("locked_at is  null")}
   scope :editors, -> {where("role in ('管理员','编辑')")}
   paginates_per 10
-  before_create :set_role
+  before_create :set_role,:set_name
   mount_uploader :avatar, UserUploader
+  before_create 
   # has_attached_file :avatar, :styles => { :medium => "160x160>", :thumb => "45x45>" }, :default_url => "/front/img/default/user_avatar_default.jpg"
   # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
@@ -34,6 +35,16 @@ class User < ActiveRecord::Base
     end
   end
   
+  def set_name
+    if self.pet_name.blank?
+      self.pet_name = default_name
+    end
+  end
+
+  def default_name
+    '昵称'
+  end
+
   def set_favorite_news(news)
     if self.favorite_news.exists?(news)
       self.favorite_news.delete(news)
