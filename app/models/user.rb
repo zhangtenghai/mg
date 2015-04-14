@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   end
 
   def default_name
-    '昵称'
+    self.name
   end
 
   def set_favorite_news(news)
