@@ -40,7 +40,8 @@
             <td colspan="2"><div class="disline"><span class="disline_f">or</span></div></td>
           </tr>
           <tr>
-            <td colspan="2"><div class="other_login"><a href="#" class="weibo_style"></a>
+            <td colspan="2"><div class="other_login">
+            <%= link_to "",  user_omniauth_authorize_path(:weibo), class: 'weibo_style' %>
             <%= link_to "",  user_omniauth_authorize_path(:qq), class: 'qq_style' %>
             </div>
             </td>
