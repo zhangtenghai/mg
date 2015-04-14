@@ -20,7 +20,10 @@ class GamesController < ApplicationController
   end
 
   def search
-    @game_results = Game.search(params[:game_search]).where("avg_score>=#{params[:min_score].to_i}")
+    @game_results = Game.search(params[:game_search])
+    if !params[:min_score].blank?
+      @game_results = @game_results.where("avg_score>=#{params[:min_score].to_i}")
+    end
     if !params[:platform].blank?
       @game_results = @game_results.tagged_with(params[:platform], :on => :platform, :any => true)
     end
