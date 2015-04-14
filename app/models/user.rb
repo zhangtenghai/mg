@@ -105,6 +105,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.nickname
+      user.remote_avatar_url = auth.info.avatar
     end
   end
 

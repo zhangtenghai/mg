@@ -24,7 +24,7 @@ module OmniAuth
           :nickname     => raw_info['screen_name'],
           :name         => raw_info['name'],
           :location     => raw_info['location'],
-          :image        => raw_info['profile_image_url'],
+          :avatar       => raw_info['profile_image_url'],
           :description  => raw_info['description'],
           :urls => {
             'Blog'      => raw_info['url'],
