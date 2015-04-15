@@ -16,7 +16,7 @@
   <div class="common_title clearfix"> <a href="#" class="aside_more">已有账号？登录<span>&gt;</span></a>
     <h4>新用户注册</h4>
     <div class="reg_tab">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), 
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name,format: :json), 
         :html => {:id => "sign_up_user"}, :format => :json, :remote => true ) do |f| %>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>

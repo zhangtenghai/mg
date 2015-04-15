@@ -2,6 +2,7 @@
 <%# coding: UTF-8 -%>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "login-form" }) do |f| %>
   <h3 class="form-title">Mg注册</h3>
+  <%= f.error_messages %>
   <% unless flash[:alert].nil? %>
   <div class="alert alert-danger">
     <button class="close" data-dismiss="alert"></button>
