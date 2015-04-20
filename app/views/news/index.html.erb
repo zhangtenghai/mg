@@ -27,8 +27,8 @@
       <div class="main_container clearfix">
         <div class="container_date">
           <div class="container_date_in">
-            <span class="week">周日</span>
-            <span class="month-day">2.1</span>
+            <span class="week"><%=I18n.t(Time.now.wday,scope: [:date,:day_names]) %></span>
+            <span class="month-day"><%=Time.now.strftime('%m.%d')%></span>
           </div>
         </div>
         <div class="container_banner">
