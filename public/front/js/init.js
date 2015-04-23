@@ -313,12 +313,12 @@ $('#to-top').click(function(){
    });
    //单个游戏页 reply
    
-   // $('.container_comment').delegate('a.reply','click',function(e){       
-    //  var _txt =$(this).next("a").text();
-    //  var _txtar =$('.container_comment').find("textarea");
-    //  _txtar.focus();
-    //  _txtar.text("@"+_txt+" ");
-   // }); 
+   $('.container_comment').delegate('a.reply','click',function(e){       
+     var _txt =$(this).next("a").text();
+     var _txtar =$('.container_comment').find("textarea");
+     _txtar.focus();
+     _txtar.text("@"+_txt+" ");
+   }); 
   
   //单个游戏页 star
    $('.vote-sub').delegate('.vote-star','mousemove',function(e){       
