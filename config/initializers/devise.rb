@@ -233,7 +233,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :qq, "101207102", "3b5abd2db3ddfcc3d33636b376288bec"
+  config.omniauth :qq_connect, "101207102", "3b5abd2db3ddfcc3d33636b376288bec"
   config.omniauth :weibo, "2667318243", "008be726d4c03e6a87910e0b7aeb7b86"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

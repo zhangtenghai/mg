@@ -1,3 +1,4 @@
+<% if comment.user %>
 <div class="comment_block">
   <% if has_score %>
   <div class="comment-score">
@@ -15,3 +16,4 @@
   <a href="/users/<%=comment.user.pet_name%>"><%=comment.user.pet_name%></a><%="(#{comment.user.signature})"  unless comment.user.signature.nil?%> 发表于<%=comment.created_at.strftime('%Y年%m月%d日')%></div>
 </div>
 
+<% end %>

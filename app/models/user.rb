@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   include Searchable
   attr_accessor :login
   devise :database_authenticatable, :registerable, :lockable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
+         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login],:omniauth_providers => [:weibo,:qq_connect]
   quick_search :name, :email, :role
 
   has_and_belongs_to_many :favorite_articles, :class_name => "Article", :join_table => "articles_user_favorites", :order => "id asc"

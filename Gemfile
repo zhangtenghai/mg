@@ -18,6 +18,7 @@ gem 'weibo_2'
 gem 'omniauth'
 gem 'omniauth-oauth2'
 gem "non-stupid-digest-assets"
+gem 'omniauth-qq'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
